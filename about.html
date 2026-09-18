@@ -63,17 +63,27 @@
 <body class="bg-warm-50 dark:bg-navy-900 text-slate-800 dark:text-slate-200 font-sans antialiased transition-colors duration-300">
 
     <!-- TOP CORPORATE UTILITY BAR -->
-    <div class="bg-navy-900 text-navy-200 text-[11px] py-2 px-4 sm:px-8 border-b border-gold-700/30 flex flex-wrap justify-between items-center sticky top-0 z-50">
-        <div class="flex items-center space-x-4 flex-wrap gap-y-1">
-            <span class="flex items-center text-gold-500/80"><i class="fa-regular fa-clock mr-1.5 text-gold-600"></i> Mon – Sat: 9 AM – 8 PM</span>
-            <span class="hidden md:inline text-navy-700">|</span>
-            <span class="flex items-center text-slate-400"><i class="fa-solid fa-scale-balanced mr-1.5 text-gold-600"></i> SBC Reg: 663/BC</span>
+    <div class="bg-navy-900 text-navy-200 text-[10px] sm:text-[11px] h-[33px] px-3 sm:px-8 border-b border-gold-700/30 flex justify-between items-center gap-2 sticky top-0 z-50 whitespace-nowrap overflow-hidden">
+        <div class="flex items-center gap-2 sm:gap-4">
+            <span class="flex items-center text-gold-400 font-medium">
+                <i class="fa-regular fa-clock mr-1.5 text-gold-500"></i> Mon &ndash; Sat: 9 AM &ndash; 8 PM
+            </span>
+            <span class="hidden md:inline text-navy-600">|</span>
+            <span class="hidden md:flex items-center text-navy-300">
+                <i class="fa-solid fa-scale-balanced mr-1.5 text-gold-500"></i> SBC Reg: 663/BC
+            </span>
         </div>
-        <div class="flex items-center space-x-3">
-            <a href="tel:+923103381280" class="hover:text-gold-400 transition-colors flex items-center text-slate-400"><i class="fa-solid fa-phone mr-1 text-gold-600 text-[9px]"></i> +92 310 338 1280</a>
-            <span class="text-navy-700">|</span>
-            <a href="https://wa.me/923112610683" target="_blank" rel="noopener noreferrer" class="text-emerald-400/90 hover:text-emerald-300 transition-colors flex items-center font-medium"><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp</a>
-            <button onclick="toggleDarkMode()" class="ml-1 p-1 rounded text-slate-500 hover:text-gold-400 transition-colors" title="Toggle Theme"><i id="themeIcon" class="fa-solid fa-moon text-sm"></i></button>
+        <div class="flex items-center gap-2 sm:gap-3">
+            <a href="tel:+923103381280" class="hover:text-gold-400 transition-colors flex items-center text-navy-300">
+                <i class="fa-solid fa-phone mr-1 text-gold-500 text-[9px]"></i> +92 310 338 1280
+            </a>
+            <span class="text-navy-600">|</span>
+            <a href="https://wa.me/923112610683" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center font-medium">
+                <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
+            </a>
+            <button onclick="toggleDarkMode()" class="ml-0.5 p-1 rounded text-navy-400 hover:text-gold-400 transition-colors" title="Toggle Theme">
+                <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+            </button>
         </div>
     </div>
 
