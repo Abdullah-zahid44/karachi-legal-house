@@ -60,7 +60,7 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-                        urdu: ['Noto Naskh Arabic', 'serif']
+                        urdu: ['Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'serif']
                     },
                     boxShadow: {
                         'soft': '0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06)',
@@ -74,6 +74,12 @@
     </script>
 
     <style>
+        @font-face {
+            font-family: 'Jameel Noori Nastaleeq';
+            src: url('/fonts/JameelNooriNastaleeq.ttf') format('truetype');
+            font-display: swap;
+        }
+        .font-urdu { line-height: 2.1; }
         html { scroll-behavior: smooth; }
         body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         ::selection { background: #bfa97a; color: #060e17; }
@@ -116,6 +122,7 @@
         }
         .nav-link:hover::after { width: 100%; }
     </style>
+<link rel="preload" href="/fonts/JameelNooriNastaleeq.ttf" as="font" type="font/ttf" crossorigin>
 </head>
 <body class="bg-warm-50 dark:bg-navy-900 text-navy-800 dark:text-navy-200 font-sans antialiased transition-colors duration-300">
 
