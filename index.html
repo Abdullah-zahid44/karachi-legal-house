@@ -91,6 +91,7 @@
             animation: logoMarquee 35s linear infinite;
         }
         .animate-logo-marquee:hover { animation-play-state: paused; }
+        .animate-logo-marquee.ticker-paused { animation-play-state: paused; }
 
         .reveal { opacity: 1; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -265,7 +266,7 @@
     </section>
 
     <!-- TRUSTED BY LEADING INSTITUTIONS (ZERO DUPLICATES, EXACT 10 ENTITIES) -->
-    <section class="bg-white dark:bg-navy-800 py-16 sm:py-20 border-b border-slate-100 dark:border-navy-700/40 transition-colors relative overflow-hidden">
+    <section class="bg-[#f1eff6] dark:bg-navy-800 py-16 sm:py-20 border-b border-slate-100 dark:border-navy-700/40 transition-colors relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12">
                 <div class="text-center sm:text-left">
@@ -284,13 +285,17 @@
 
             <!-- Ticker View : borderless logo cloud, edge fades, pauses on hover -->
             <div id="partnerMarqueeView" class="hidden relative overflow-hidden py-6">
-                <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
-                <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#f1eff6] dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#f1eff6] dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
 
                 <div class="animate-logo-marquee flex items-center hover:[animation-play-state:paused]" id="tickerContainer">
                 </div>
             </div>
-
+            <div id="tickerPauseWrap" class="hidden justify-end mt-2 pr-1">
+                    <button id="tickerPauseBtn" onclick="toggleTickerPause()" class="text-[11px] font-medium tracking-[0.25em] uppercase text-slate-400 dark:text-slate-500 hover:text-navy-800 dark:hover:text-gold-400 transition-colors">
+                        Pause
+                    </button>
+                </div>
             <!-- Grid View : borderless logo cloud (Dynamically Injected To Guarantee No Mismatch) -->
             <div id="partnerGridView" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-2 gap-y-4 items-center">
             </div>
@@ -1022,20 +1027,31 @@
             const gridView = document.getElementById('partnerGridView');
             const btnMarquee = document.getElementById('btnMarqueeView');
             const btnGrid = document.getElementById('btnGridView');
+            const pauseWrap = document.getElementById('tickerPauseWrap');
 
             if (!marqueeView || !gridView) return;
 
             if (style === 'marquee') {
                 marqueeView.classList.remove('hidden');
                 gridView.classList.add('hidden');
+                if (pauseWrap) { pauseWrap.classList.remove('hidden'); pauseWrap.classList.add('flex'); }
                 btnMarquee.className = "px-3.5 py-1.5 rounded-md text-xs font-medium transition-all duration-300 bg-white dark:bg-navy-700 text-navy-800 dark:text-white shadow-sm";
                 btnGrid.className = "px-3.5 py-1.5 rounded-md text-xs font-medium transition-all duration-300 text-slate-500 dark:text-slate-400";
             } else {
                 marqueeView.classList.add('hidden');
                 gridView.classList.remove('hidden');
+                if (pauseWrap) { pauseWrap.classList.add('hidden'); pauseWrap.classList.remove('flex'); }
                 btnGrid.className = "px-3.5 py-1.5 rounded-md text-xs font-medium transition-all duration-300 bg-white dark:bg-navy-700 text-navy-800 dark:text-white shadow-sm";
                 btnMarquee.className = "px-3.5 py-1.5 rounded-md text-xs font-medium transition-all duration-300 text-slate-500 dark:text-slate-400";
             }
+        }
+
+        function toggleTickerPause() {
+            const t = document.getElementById('tickerContainer');
+            const b = document.getElementById('tickerPauseBtn');
+            if (!t || !b) return;
+            const paused = t.classList.toggle('ticker-paused');
+            b.textContent = paused ? 'Play' : 'Pause';
         }
 
         function toggleMobileMenu() {
