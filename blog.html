@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate Clients & Retainers | Karachi Legal House</title>
+    <title>Legal Blog & Guides | Karachi Legal House</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23091520'/%3E%3Cpath d='M32 12v30M20 42h24M32 12L16 28M32 12L48 28' stroke='%23c5a880' stroke-width='3' stroke-linecap='round'/%3E%3Cellipse cx='20' cy='30' rx='8' ry='3' fill='%23c5a880'/%3E%3Cellipse cx='44' cy='30' rx='8' ry='3' fill='%23c5a880'/%3E%3Ctext x='32' y='56' font-family='serif' font-weight='800' font-size='10' fill='%23c5a880' text-anchor='middle'%3EKLH%3C/text%3E%3C/svg%3E">
-    
+
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="description" content="Corporate Legal Retainers & Institutional Portfolio of Karachi Legal House - Banks, FinTech, Industrial Conglomerates, State Authorities.">
+    <meta name="description" content="Karachi Legal House blog — plain-language guides on bail, PECA cyber law, property verification and khula in Pakistan.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,10 +58,15 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: #bfa97a; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
-    
         #mobileMenu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
         #mobileMenu.open { max-height: 78vh; overflow-y: auto; }
-</style>
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-item.open .faq-answer { max-height: 600px; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-chevron { transition: transform 0.3s ease; }
+        .article-body p { margin-bottom: 1.1rem; line-height: 1.85; }
+        .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; margin: 2rem 0 0.9rem; }
+    </style>
 </head>
 <body class="bg-warm-50 dark:bg-navy-900 text-slate-800 dark:text-slate-200 font-sans antialiased transition-colors duration-300">
 
@@ -107,6 +112,7 @@
                     <span class="block text-[9px] font-semibold text-gold-800 dark:text-gold-500 uppercase tracking-[0.2em] mt-0.5">Advocates & Legal Consultants</span>
                 </div>
             </a>
+            
             <nav class="hidden lg:flex items-center space-x-6 text-[13px] font-medium text-slate-600 dark:text-slate-300">
                 <a href="index.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Home</a>
                 
@@ -126,12 +132,13 @@
                         </div>
                     </div>
                 </div>
-                <a href="clients.html" class="text-gold-500 font-bold border-b border-gold-500 pb-0.5">Retainers</a>
+                <a href="clients.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Retainers</a>
                 <a href="index.html#leadership" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Advocates</a>
                 <a href="faq.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">FAQ</a>
-                <a href="blog.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Blog</a>
+                <a href="blog.html" class="text-gold-500 font-bold border-b border-gold-500 pb-0.5">Blog</a>
                 <a href="contact.html" class="bg-navy-900 hover:bg-navy-800 text-gold-400 hover:text-gold-300 px-5 py-2.5 rounded transition-all font-semibold text-xs uppercase tracking-wider">Book Consultation</a>
             </nav>
+            
             <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-navy-600 dark:text-navy-300" aria-label="Menu" aria-expanded="false">
                 <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
             </button>
@@ -156,95 +163,80 @@
                 <a href="contact.html" onclick="closeMobileMenu()" class="mt-2 bg-navy-900 text-gold-400 py-3 px-4 rounded text-center font-semibold text-xs uppercase tracking-wider">Book Consultation</a>
             </nav>
         </div>
-        </div>
     </header>
 
     <!-- PAGE HERO -->
     <section class="bg-navy-900 text-white py-14 sm:py-20 px-4 border-b border-navy-800 relative grain">
-        <div class="max-w-7xl mx-auto text-center relative z-10 reveal">
-            <span class="text-gold-600 font-semibold uppercase tracking-[0.2em] text-[11px] mb-3 block">Institutional Standing</span>
-            <h1 class="font-serif text-4xl sm:text-5xl font-semibold mb-4">Corporate Clients & Retainers</h1>
-            <p class="font-urdu text-gold-300 text-lg max-w-2xl mx-auto font-medium" lang="ur" dir="rtl">نمایاں کارپوریٹ ادارے، بینکس اور سرکاری محکمے جن کی وکالت کراچی لیگل ہاؤس نے کی</p>
-            <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-6"></div>
+        <div class="max-w-7xl mx-auto relative z-10 reveal">
+            <nav class="text-[11px] text-slate-400 mb-4 tracking-wide"><a href="index.html" class="hover:text-gold-400">Home</a> &nbsp;/&nbsp; <span class="text-gold-400">Blog</span></nav>
+            <span class="text-gold-500 font-semibold uppercase tracking-[0.2em] text-[11px] mb-3 block">Legal Insights</span>
+            <h1 class="font-serif text-4xl sm:text-5xl font-semibold mb-4">Blog — Legal Guides for Karachi</h1>
+            <p class="font-urdu text-gold-300 text-[17px] max-w-2xl font-medium" lang="ur" dir="rtl">پاکستانی قوانین پر آسان اردو و انگلش رہنمائی</p>
+            <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mt-6"></div>
         </div>
     </section>
 
-    <!-- CLIENTS PORTFOLIO GRID -->
-    <section class="py-14 sm:py-24 bg-warm-50 dark:bg-navy-900">
+    <section class="py-14 sm:py-20 bg-warm-50 dark:bg-navy-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Client 1 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col justify-between group reveal">
-                    <div class="bg-navy-900 p-5 text-white flex items-center justify-between border-b border-gold-600/30">
-                        <div>
-                            <h3 class="font-serif font-bold text-xl text-gold-500">JS Bank Limited</h3>
-                            <span class="text-[10px] uppercase font-mono tracking-[0.1em] opacity-70">Commercial Bank</span>
-                        </div>
-                        <span class="bg-gold-500/10 text-gold-400 text-xs font-mono font-medium px-3 py-1 rounded border border-gold-500/20">Recovery Panel</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <p class="text-slate-600 dark:text-slate-300 text-[13px] leading-relaxed">Representing JS Bank before Sindh Banking Courts under Financial Institutions Ordinance 2001. Handling high-value loan recovery suits, mortgage executions, and financial asset litigation.</p>
-                        <div class="bg-warm-50 dark:bg-navy-900 p-4 rounded-lg border border-slate-100 dark:border-navy-700/40">
-                            <p class="font-urdu text-[17px] text-navy-800 dark:text-gold-400 font-medium leading-relaxed">جے ایس بینک — سندھ بینکنگ کورٹس میں ریکوری مقدمات اور فنانس آرڈیننس 2001 کے تحت قانونی وکالت۔</p>
-                        </div>
-                    </div>
+            <a href="blog-bail-process.html" class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col group reveal">
+                <div class="h-52 overflow-hidden relative">
+                    <img src="/practices/criminal.jpg" alt="Bail in Pakistan: Pre-Arrest vs Post-Arrest, Explained Simply" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-gold-500 text-navy-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded">Criminal Law</span>
                 </div>
-
-                <!-- Client 2 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col justify-between group reveal" style="transition-delay: 100ms">
-                    <div class="bg-navy-900 p-5 text-white flex items-center justify-between border-b border-gold-600/30">
-                        <div>
-                            <h3 class="font-serif font-bold text-xl text-gold-500">BankIslami Pakistan</h3>
-                            <span class="text-[10px] uppercase font-mono tracking-[0.1em] opacity-70">Islamic Banking</span>
-                        </div>
-                        <span class="bg-gold-500/10 text-gold-400 text-xs font-mono font-medium px-3 py-1 rounded border border-gold-500/20">Panel Counsel</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <p class="text-slate-600 dark:text-slate-300 text-[13px] leading-relaxed">Shariah-compliant corporate legal advisory, Ijarah & Murabaha default litigation, contractual enforcement, and banking recovery suits across District & High Courts of Sindh.</p>
-                        <div class="bg-warm-50 dark:bg-navy-900 p-4 rounded-lg border border-slate-100 dark:border-navy-700/40">
-                            <p class="font-urdu text-[17px] text-navy-800 dark:text-gold-400 font-medium leading-relaxed">بینک اسلامی — اسلامی بینکنگ معاہدات، فنانسنگ ریکوری اور ہائی کورٹ میں مستقل پینل وکالت۔</p>
-                        </div>
-                    </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <p class="text-[11px] text-slate-500 dark:text-navy-400 mb-2">September 12, 2026 &middot; 6 min read</p>
+                    <h3 class="font-serif font-bold text-xl text-navy-800 dark:text-white mb-2 group-hover:text-gold-600 transition-colors leading-snug">Bail in Pakistan: Pre-Arrest vs Post-Arrest, Explained Simply</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed mb-4 flex-grow">Section 498 or 497 CrPC? A plain-language guide to how bail actually works in Karachi's courts — and what to do in the first 48 hours after an FIR.</p>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400">Read article <i class="fa-solid fa-arrow-right ml-1"></i></span>
                 </div>
+            </a>
 
-                <!-- Client 3 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col justify-between group reveal">
-                    <div class="bg-navy-900 p-5 text-white flex items-center justify-between border-b border-gold-600/30">
-                        <div>
-                            <h3 class="font-serif font-bold text-xl text-gold-500">AsaanPay & VRG</h3>
-                            <span class="text-[10px] uppercase font-mono tracking-[0.1em] opacity-70">FinTech Gateway</span>
-                        </div>
-                        <span class="bg-gold-500/10 text-gold-400 text-xs font-mono font-medium px-3 py-1 rounded border border-gold-500/20">Regulatory Lead</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <p class="text-slate-600 dark:text-slate-300 text-[13px] leading-relaxed">Advising digital financial gateways on State Bank of Pakistan (SBP) licensing compliance, PECA 2016 cyber-security regulations, and electronic funds transfer legal disputes.</p>
-                        <div class="bg-warm-50 dark:bg-navy-900 p-4 rounded-lg border border-slate-100 dark:border-navy-700/40">
-                            <p class="font-urdu text-[17px] text-navy-800 dark:text-gold-400 font-medium leading-relaxed">آسان پے و ورچوئل ریمیٹنس — اسٹیٹ بینک ریگولیٹری امور اور سائبر کرائم ایکٹ (PECA 2016) مشاورت۔</p>
-                        </div>
-                    </div>
+            <a href="blog-peca-guide.html" class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col group reveal">
+                <div class="h-52 overflow-hidden relative">
+                    <img src="/practices/cyber.jpg" alt="You Received an FIA Cyber Crime Notice — What to Do First" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-gold-500 text-navy-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded">Cyber Law</span>
                 </div>
-
-                <!-- Client 4 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col justify-between group reveal" style="transition-delay: 100ms">
-                    <div class="bg-navy-900 p-5 text-white flex items-center justify-between border-b border-gold-600/30">
-                        <div>
-                            <h3 class="font-serif font-bold text-xl text-gold-500">Amreli Steels Ltd</h3>
-                            <span class="text-[10px] uppercase font-mono tracking-[0.1em] opacity-70">Industrial Mfg</span>
-                        </div>
-                        <span class="bg-gold-500/10 text-gold-400 text-xs font-mono font-medium px-3 py-1 rounded border border-gold-500/20">Lead Counsel</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <p class="text-slate-600 dark:text-slate-300 text-[13px] leading-relaxed">Chief Legal Counsel managing industrial land title disputes, environmental tribunal litigation, labor union agreements, and commercial arbitration in High Court.</p>
-                        <div class="bg-warm-50 dark:bg-navy-900 p-4 rounded-lg border border-slate-100 dark:border-navy-700/40">
-                            <p class="font-urdu text-[17px] text-navy-800 dark:text-gold-400 font-medium leading-relaxed">عمریلی اسٹیلز — صنعتی جائیداد کی تصدیق، لیبر ٹریبیونل تنازعات اور کارپوریٹ ثالثی کے چیف کونسل۔</p>
-                        </div>
-                    </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <p class="text-[11px] text-slate-500 dark:text-navy-400 mb-2">September 5, 2026 &middot; 5 min read</p>
+                    <h3 class="font-serif font-bold text-xl text-navy-800 dark:text-white mb-2 group-hover:text-gold-600 transition-colors leading-snug">You Received an FIA Cyber Crime Notice — What to Do First</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed mb-4 flex-grow">Don't panic and don't ignore it. A Karachi cyber lawyer's checklist for responding to FIA Cyber Crime Wing notices under PECA 2016.</p>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400">Read article <i class="fa-solid fa-arrow-right ml-1"></i></span>
                 </div>
+            </a>
 
-            </div>
+            <a href="blog-property-verification.html" class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col group reveal">
+                <div class="h-52 overflow-hidden relative">
+                    <img src="/practices/property.jpg" alt="Buying Property in Karachi? Verify the Title Before the Token" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-gold-500 text-navy-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded">Property Law</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <p class="text-[11px] text-slate-500 dark:text-navy-400 mb-2">August 28, 2026 &middot; 7 min read</p>
+                    <h3 class="font-serif font-bold text-xl text-navy-800 dark:text-white mb-2 group-hover:text-gold-600 transition-colors leading-snug">Buying Property in Karachi? Verify the Title Before the Token</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed mb-4 flex-grow">Double selling, stay-order plots and broken lease chains: the five title checks that stand between you and Karachi's most common property frauds.</p>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400">Read article <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                </div>
+            </a>
+
+            <a href="blog-khula-process.html" class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col group reveal">
+                <div class="h-52 overflow-hidden relative">
+                    <img src="/practices/family.jpg" alt="Khula in Pakistan: Process, Timeline and Child Custody" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-gold-500 text-navy-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded">Family Law</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <p class="text-[11px] text-slate-500 dark:text-navy-400 mb-2">August 20, 2026 &middot; 6 min read</p>
+                    <h3 class="font-serif font-bold text-xl text-navy-800 dark:text-white mb-2 group-hover:text-gold-600 transition-colors leading-snug">Khula in Pakistan: Process, Timeline and Child Custody</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed mb-4 flex-grow">How khula actually proceeds in Karachi's Family Courts — filing, reconciliation, decree, the 90-day Union Council certificate, and what happens to the children.</p>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400">Read article <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                </div>
+            </a></div>
         </div>
     </section>
+    <p class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-[11px] text-slate-500 dark:text-navy-400 leading-relaxed">Disclaimer: This page provides general information about Pakistani law and is not legal advice. Every case turns on its own facts — consult an advocate for advice on your matter.</p>
 
     <!-- FOOTER -->
     <footer class="bg-navy-900 text-slate-400 py-14 border-t border-navy-800">
@@ -306,18 +298,6 @@
                 }
             }
         }
-        
-        // Intersection Observer for animations
-        window.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
@@ -341,6 +321,26 @@
             icon.className = 'fa-solid fa-bars text-xl';
             btn.setAttribute('aria-expanded', 'false');
         }
+
+        function toggleFaq(el) {
+            const item = el.closest('.faq-item');
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        }
+
+        // Intersection Observer for animations
+        window.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+        
     </script>
 </body>
 </html>

@@ -58,7 +58,10 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: #bfa97a; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
-    </style>
+    
+        #mobileMenu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+        #mobileMenu.open { max-height: 78vh; overflow-y: auto; }
+</style>
 </head>
 <body class="bg-warm-50 dark:bg-navy-900 text-slate-800 dark:text-slate-200 font-sans antialiased transition-colors duration-300">
 
@@ -104,13 +107,55 @@
                     <span class="block text-[9px] font-semibold text-gold-800 dark:text-gold-500 uppercase tracking-[0.2em] mt-0.5">Advocates & Legal Consultants</span>
                 </div>
             </a>
-            <nav class="hidden lg:flex items-center space-x-8 text-[13px] font-medium text-slate-600 dark:text-slate-300">
+            <nav class="hidden lg:flex items-center space-x-6 text-[13px] font-medium text-slate-600 dark:text-slate-300">
                 <a href="index.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Home</a>
-                <a href="practices.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Practices</a>
+                
+                <div class="relative group">
+                    <a href="practices.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors flex items-center">Practices <i class="fa-solid fa-chevron-down ml-1.5 text-[8px] opacity-70"></i></a>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 hidden group-hover:block z-50">
+                        <div class="w-72 bg-white dark:bg-navy-800 border border-navy-100 dark:border-navy-700 rounded-xl shadow-premium py-2 overflow-hidden">
+                            <a href="practice-criminal.html" class="flex items-center px-5 py-2.5 text-[13px] text-navy-700 dark:text-navy-200 hover:bg-warm-100 dark:hover:bg-navy-900 hover:text-gold-700 dark:hover:text-gold-400 transition-colors"><i class="fa-solid fa-gavel w-5 text-gold-600 dark:text-gold-500 text-xs"></i>Criminal Defense & Bail</a>
+<a href="practice-civil.html" class="flex items-center px-5 py-2.5 text-[13px] text-navy-700 dark:text-navy-200 hover:bg-warm-100 dark:hover:bg-navy-900 hover:text-gold-700 dark:hover:text-gold-400 transition-colors"><i class="fa-solid fa-file-signature w-5 text-gold-600 dark:text-gold-500 text-xs"></i>Civil & Commercial Suits</a>
+<a href="practice-banking.html" class="flex items-center px-5 py-2.5 text-[13px] text-navy-700 dark:text-navy-200 hover:bg-warm-100 dark:hover:bg-navy-900 hover:text-gold-700 dark:hover:text-gold-400 transition-colors"><i class="fa-solid fa-building-columns w-5 text-gold-600 dark:text-gold-500 text-xs"></i>Banking & Corporate Law</a>
+<a href="practice-family.html" class="flex items-center px-5 py-2.5 text-[13px] text-navy-700 dark:text-navy-200 hover:bg-warm-100 dark:hover:bg-navy-900 hover:text-gold-700 dark:hover:text-gold-400 transition-colors"><i class="fa-solid fa-children w-5 text-gold-600 dark:text-gold-500 text-xs"></i>Family & Custody Law</a>
+<a href="practice-property.html" class="flex items-center px-5 py-2.5 text-[13px] text-navy-700 dark:text-navy-200 hover:bg-warm-100 dark:hover:bg-navy-900 hover:text-gold-700 dark:hover:text-gold-400 transition-colors"><i class="fa-solid fa-house w-5 text-gold-600 dark:text-gold-500 text-xs"></i>Property & Succession</a>
+<a href="practice-cyber.html" class="flex items-center px-5 py-2.5 text-[13px] text-navy-700 dark:text-navy-200 hover:bg-warm-100 dark:hover:bg-navy-900 hover:text-gold-700 dark:hover:text-gold-400 transition-colors"><i class="fa-solid fa-shield-halved w-5 text-gold-600 dark:text-gold-500 text-xs"></i>Cyber Crime & PECA Law</a>
+                            <div class="border-t border-navy-100 dark:border-navy-700 mt-1 pt-1">
+                                <a href="practices.html" class="flex items-center px-5 py-2.5 text-[13px] font-semibold text-gold-700 dark:text-gold-400 hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">View all practices <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <a href="clients.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Retainers</a>
-                <a href="about.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Advocates</a>
+                <a href="index.html#leadership" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Advocates</a>
+                <a href="faq.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">FAQ</a>
+                <a href="blog.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Blog</a>
                 <a href="contact.html" class="bg-navy-900 hover:bg-navy-800 text-gold-400 hover:text-gold-300 px-5 py-2.5 rounded transition-all font-semibold text-xs uppercase tracking-wider">Book Consultation</a>
             </nav>
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-navy-600 dark:text-navy-300" aria-label="Menu" aria-expanded="false">
+                <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="lg:hidden bg-white dark:bg-navy-800 border-t border-navy-100 dark:border-navy-700/60">
+            <nav class="flex flex-col px-5 py-4 space-y-1 text-sm text-navy-700 dark:text-navy-200">
+                <a href="index.html" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors font-medium">Home</a>
+                <span class="px-3 pt-2 text-[10px] uppercase tracking-[0.2em] text-gold-700 dark:text-gold-500 font-semibold">Practice Areas</span>
+                <a href="practice-criminal.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Criminal Defense & Bail</a>
+<a href="practice-civil.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Civil & Commercial Suits</a>
+<a href="practice-banking.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Banking & Corporate Law</a>
+<a href="practice-family.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Family & Custody Law</a>
+<a href="practice-property.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Property & Succession</a>
+<a href="practice-cyber.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Cyber Crime & PECA Law</a>
+                <a href="practices.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded text-gold-700 dark:text-gold-400 font-medium hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">View all practices &rarr;</a>
+                <span class="px-3 pt-2 text-[10px] uppercase tracking-[0.2em] text-gold-700 dark:text-gold-500 font-semibold">Firm</span>
+                <a href="clients.html" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">Retainers</a>
+                <a href="index.html#leadership" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">Advocates</a>
+                <a href="faq.html" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">FAQ</a>
+                <a href="blog.html" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">Blog</a>
+                <a href="contact.html" onclick="closeMobileMenu()" class="mt-2 bg-navy-900 text-gold-400 py-3 px-4 rounded text-center font-semibold text-xs uppercase tracking-wider">Book Consultation</a>
+            </nav>
+        </div>
         </div>
     </header>
 
@@ -234,14 +279,49 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-navy-900 text-slate-400 py-12 border-t border-navy-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6 text-xs">
-            <div>
-                <h4 class="text-white font-serif text-xl font-semibold mb-1">Karachi Legal House</h4>
-                <p class="text-slate-400">&copy; 2025 Karachi Legal House. All rights reserved.</p>
+    <footer class="bg-navy-900 text-slate-400 py-14 border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-xs">
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-white font-serif text-xl font-semibold mb-1">Karachi Legal House</h4>
+                    <p class="text-gold-600 text-[10px] font-semibold uppercase tracking-[0.2em] mb-3">Advocates & Legal Consultants</p>
+                    <p class="text-slate-500 leading-relaxed">Authorized to practice law throughout the Province of Sindh and superior courts of Pakistan. Sindh Bar Council Registration: 663/BC.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold uppercase tracking-wider text-[11px] mb-4">Practice Areas</h5>
+                    <ul class="space-y-2.5 text-slate-500">
+                        <li><a href="practice-criminal.html" class="hover:text-gold-400 transition-colors">Criminal Defense & Bail</a></li>
+<li><a href="practice-civil.html" class="hover:text-gold-400 transition-colors">Civil & Commercial Suits</a></li>
+<li><a href="practice-banking.html" class="hover:text-gold-400 transition-colors">Banking & Corporate Law</a></li>
+<li><a href="practice-family.html" class="hover:text-gold-400 transition-colors">Family & Custody Law</a></li>
+<li><a href="practice-property.html" class="hover:text-gold-400 transition-colors">Property & Succession</a></li>
+<li><a href="practice-cyber.html" class="hover:text-gold-400 transition-colors">Cyber Crime & PECA Law</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold uppercase tracking-wider text-[11px] mb-4">Quick Links</h5>
+                    <ul class="space-y-2.5 text-slate-500">
+                        <li><a href="about.html" class="hover:text-gold-400 transition-colors">About the Firm</a></li>
+                        <li><a href="clients.html" class="hover:text-gold-400 transition-colors">Client Retainers</a></li>
+                        <li><a href="index.html#leadership" class="hover:text-gold-400 transition-colors">Our Advocates</a></li>
+                        <li><a href="faq.html" class="hover:text-gold-400 transition-colors">FAQ</a></li>
+                        <li><a href="blog.html" class="hover:text-gold-400 transition-colors">Legal Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold uppercase tracking-wider text-[11px] mb-4">Contact</h5>
+                    <ul class="space-y-2.5 text-slate-500">
+                        <li><a href="tel:+923112610683" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-phone mr-2 text-gold-600"></i>+92 311 2610683</a></li>
+                        <li><a href="https://wa.me/923112610683" target="_blank" rel="noopener" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-whatsapp mr-2 text-gold-600"></i>WhatsApp</a></li>
+                        <li><a href="mailto:info.karachilegalhouse@gmail.com" class="hover:text-gold-400 transition-colors break-all"><i class="fa-solid fa-envelope mr-2 text-gold-600"></i>info.karachilegalhouse@gmail.com</a></li>
+                        <li><i class="fa-solid fa-location-dot mr-2 text-gold-600"></i>28C, Old Sunset Blvd, Phase 2, DHA, Karachi</li>
+                    </ul>
+                </div>
             </div>
-            <div class="max-w-sm text-slate-500">
-                <p class="text-slate-400">Authorized to practice law throughout the Province of Sindh and superior courts of Pakistan. Sindh Bar Council Registration: 663/BC.</p>
+            <div class="border-t border-navy-800 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-slate-600">
+                <p>&copy; 2026 Karachi Legal House. All rights reserved.</p>
+                <p>General information only — not legal advice.</p>
             </div>
         </div>
     </footer>
@@ -331,6 +411,29 @@
 
         function toggleDarkMode() {
             document.documentElement.classList.toggle('dark');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            const btn = document.getElementById('mobileMenuBtn');
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                icon.className = 'fa-solid fa-bars text-xl';
+                btn.setAttribute('aria-expanded', 'false');
+            } else {
+                menu.classList.add('open');
+                icon.className = 'fa-solid fa-xmark text-xl';
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        }
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            const btn = document.getElementById('mobileMenuBtn');
+            menu.classList.remove('open');
+            icon.className = 'fa-solid fa-bars text-xl';
+            btn.setAttribute('aria-expanded', 'false');
         }
     </script>
 </body>

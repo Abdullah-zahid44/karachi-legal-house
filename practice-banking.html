@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Areas & Legal Services | Karachi Legal House</title>
+    <title>Banking & Corporate Law | Karachi Legal House</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23091520'/%3E%3Cpath d='M32 12v30M20 42h24M32 12L16 28M32 12L48 28' stroke='%23c5a880' stroke-width='3' stroke-linecap='round'/%3E%3Cellipse cx='20' cy='30' rx='8' ry='3' fill='%23c5a880'/%3E%3Cellipse cx='44' cy='30' rx='8' ry='3' fill='%23c5a880'/%3E%3Ctext x='32' y='56' font-family='serif' font-weight='800' font-size='10' fill='%23c5a880' text-anchor='middle'%3EKLH%3C/text%3E%3C/svg%3E">
-    
+
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="description" content="Core Practice Areas of Karachi Legal House - Criminal Defense, Civil Litigation, Banking & SECP Corporate, Family Custody, Property Title Verification, PECA Cyber Crime.">
+    <meta name="description" content="Banking court lawyers in Karachi — loan recovery defense under FIO 2001, SECP company incorporation & compliance, cheque dishonor (489-F) and corporate retainers.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,10 +58,15 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: #bfa97a; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
-    
         #mobileMenu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
         #mobileMenu.open { max-height: 78vh; overflow-y: auto; }
-</style>
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-item.open .faq-answer { max-height: 600px; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-chevron { transition: transform 0.3s ease; }
+        .article-body p { margin-bottom: 1.1rem; line-height: 1.85; }
+        .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; margin: 2rem 0 0.9rem; }
+    </style>
 </head>
 <body class="bg-warm-50 dark:bg-navy-900 text-slate-800 dark:text-slate-200 font-sans antialiased transition-colors duration-300">
 
@@ -107,6 +112,7 @@
                     <span class="block text-[9px] font-semibold text-gold-800 dark:text-gold-500 uppercase tracking-[0.2em] mt-0.5">Advocates & Legal Consultants</span>
                 </div>
             </a>
+            
             <nav class="hidden lg:flex items-center space-x-6 text-[13px] font-medium text-slate-600 dark:text-slate-300">
                 <a href="index.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Home</a>
                 
@@ -132,6 +138,7 @@
                 <a href="blog.html" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Blog</a>
                 <a href="contact.html" class="bg-navy-900 hover:bg-navy-800 text-gold-400 hover:text-gold-300 px-5 py-2.5 rounded transition-all font-semibold text-xs uppercase tracking-wider">Book Consultation</a>
             </nav>
+            
             <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-navy-600 dark:text-navy-300" aria-label="Menu" aria-expanded="false">
                 <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
             </button>
@@ -156,135 +163,190 @@
                 <a href="contact.html" onclick="closeMobileMenu()" class="mt-2 bg-navy-900 text-gold-400 py-3 px-4 rounded text-center font-semibold text-xs uppercase tracking-wider">Book Consultation</a>
             </nav>
         </div>
-        </div>
     </header>
 
     <!-- PAGE HERO -->
     <section class="bg-navy-900 text-white py-14 sm:py-20 px-4 border-b border-navy-800 relative grain">
-        <div class="max-w-7xl mx-auto text-center relative z-10 reveal">
-            <span class="text-gold-600 font-semibold uppercase tracking-[0.2em] text-[11px] mb-3 block">Comprehensive Courtroom Advocacy</span>
-            <h1 class="font-serif text-4xl sm:text-5xl font-semibold mb-4">Core Practice Areas & Specializations</h1>
-            <p class="font-urdu text-gold-300 text-lg max-w-2xl mx-auto font-medium" lang="ur" dir="rtl">فوجداری، دیوانی، بینکنگ، خاندانی تنازعات اور سائبر کرائم کیسز کی مکمل عدالتی وکالت</p>
-            <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-6"></div>
+        <div class="max-w-7xl mx-auto relative z-10 reveal">
+            <nav class="text-[11px] text-slate-400 mb-4 tracking-wide"><a href="index.html" class="hover:text-gold-400">Home</a> &nbsp;/&nbsp; <a href="practices.html" class="hover:text-gold-400">Practices</a> &nbsp;/&nbsp; <span class="text-gold-400">Banking & Corporate Law</span></nav>
+            <span class="text-gold-500 font-semibold uppercase tracking-[0.2em] text-[11px] mb-3 block">Banking & Corporate</span>
+            <h1 class="font-serif text-4xl sm:text-5xl font-semibold mb-4">Banking & Corporate Law</h1>
+            <p class="font-urdu text-gold-300 text-[17px] max-w-2xl font-medium" lang="ur" dir="rtl">بینکنگ ریکوری مقدمات، SECP امور اور کارپوریٹ معاہدے</p>
+            <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mt-6"></div>
         </div>
     </section>
 
-    <!-- PRACTICE AREAS GRID -->
-    <section class="py-14 sm:py-24 bg-warm-50 dark:bg-navy-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Practice 1 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col h-full group reveal">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/practices/criminal.jpg" alt="Criminal Defense" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-4 bg-gold-500 text-navy-900 font-bold font-mono text-xs px-2.5 py-0.5 rounded shadow">CrPC 1898 & PPC</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-serif font-bold text-2xl text-navy-800 dark:text-white mb-1">Criminal Defense & Bail</h3>
-                            <p class="font-urdu text-[17px] font-semibold text-gold-800 dark:text-gold-300 mb-3" lang="ur" dir="rtl">فوجداری کیسز، ضمانت اور ایف آئی آر منسوخی</p>
-                            <p class="text-navy-700 dark:text-navy-200 text-sm leading-relaxed mb-6">Defense in Sessions Courts, NAB, FIA, and High Court of Sindh. Expertise in pre-arrest/post-arrest bails, FIR quashment, and trial defense.</p>
-                        </div>
-                        <a href="practice-criminal.html" class="block text-center text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400 hover:text-navy-900 dark:hover:text-white mb-3 transition-colors">View Practice Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                        <a href="contact.html?area=Criminal" class="w-full bg-navy-900 hover:bg-gold-500 text-gold-400 hover:text-navy-900 font-bold py-3 rounded text-center text-[11px] uppercase tracking-[0.15em] transition-colors border border-gold-500/20">Consult Criminal Lawyer</a>
-                    </div>
+    <section class="py-14 sm:py-20 bg-warm-50 dark:bg-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <span class="text-gold-800 dark:text-gold-500 text-[11px] font-semibold tracking-[0.2em] uppercase">Overview</span>
+                <h2 class="font-serif text-3xl font-semibold text-navy-800 dark:text-white mt-2 mb-5">Dedicated Banking & Corporate Law Counsel in Karachi</h2>
+                <p class="text-navy-700 dark:text-navy-200 leading-relaxed mb-4">When a bank moves against you — or when your business needs to move against a defaulter — the forum is usually the Banking Court under the Financial Institutions (Recovery of Finances) Ordinance, 2001, where procedure is faster and less forgiving than ordinary civil courts. We represent both financial institutions and borrowers: recovery suits for banks, and leave-to-defend applications for customers facing one-sided decrees.</p>
+<p class="text-navy-700 dark:text-navy-200 leading-relaxed mb-4">On the corporate side, we handle SECP incorporation and compliance, shareholder disputes, and commercial contract drafting for Karachi's trading and fintech businesses — including panel retainers for institutions that need standing counsel.</p>
+                <h3 class="font-semibold text-navy-800 dark:text-white text-sm uppercase tracking-wider mt-6 mb-3">Courts & Forums We Appear In</h3>
+                <div><span class="inline-block bg-navy-50 dark:bg-navy-800 border border-navy-200 dark:border-navy-700 text-navy-700 dark:text-navy-200 text-xs px-3.5 py-2 rounded-full mr-2 mb-2">Banking Courts Sindh</span>
+<span class="inline-block bg-navy-50 dark:bg-navy-800 border border-navy-200 dark:border-navy-700 text-navy-700 dark:text-navy-200 text-xs px-3.5 py-2 rounded-full mr-2 mb-2">Sindh High Court</span>
+<span class="inline-block bg-navy-50 dark:bg-navy-800 border border-navy-200 dark:border-navy-700 text-navy-700 dark:text-navy-200 text-xs px-3.5 py-2 rounded-full mr-2 mb-2">SECP Company Registration Office</span>
+<span class="inline-block bg-navy-50 dark:bg-navy-800 border border-navy-200 dark:border-navy-700 text-navy-700 dark:text-navy-200 text-xs px-3.5 py-2 rounded-full mr-2 mb-2">Debt Recovery Fora</span></div>
+            </div>
+            <div class="reveal">
+                <div class="rounded-2xl overflow-hidden shadow-premium relative">
+                    <img src="/practices/banking.jpg" alt="Banking & Corporate Law — Karachi Legal House" class="w-full h-80 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    <span class="absolute bottom-4 left-5 bg-gold-500 text-navy-900 font-bold font-mono text-xs px-3 py-1 rounded shadow">FIO 2001 & SECP</span>
                 </div>
-
-                <!-- Practice 2 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col h-full group reveal" style="transition-delay: 100ms">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/practices/civil.jpg" alt="Civil Suits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-4 bg-navy-800 text-gold-400 border border-gold-500/40 font-bold font-mono text-xs px-2.5 py-0.5 rounded shadow">CPC 1908 & Relief Act</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-serif font-bold text-2xl text-navy-800 dark:text-white mb-1">Civil & Commercial Suits</h3>
-                            <p class="font-urdu text-[17px] font-semibold text-gold-800 dark:text-gold-300 mb-3" lang="ur" dir="rtl">دیوانی مقدمات، حکم امتناعی اور جائیداد تقسیم</p>
-                            <p class="text-navy-700 dark:text-navy-200 text-sm leading-relaxed mb-6">Filing and defending partition suits, stay orders, injunctions, damages suits, and specific performance of contracts in High Court & District Courts.</p>
-                        </div>
-                        <a href="practice-civil.html" class="block text-center text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400 hover:text-navy-900 dark:hover:text-white mb-3 transition-colors">View Practice Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                        <a href="contact.html?area=Civil" class="w-full bg-navy-900 hover:bg-gold-500 text-gold-400 hover:text-navy-900 font-bold py-3 rounded text-center text-[11px] uppercase tracking-[0.15em] transition-colors border border-gold-500/20">Consult Civil Advocate</a>
-                    </div>
-                </div>
-
-                <!-- Practice 3 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col h-full group reveal" style="transition-delay: 200ms">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/practices/banking.jpg" alt="Banking Law" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-4 bg-gold-500 text-navy-900 font-bold font-mono text-xs px-2.5 py-0.5 rounded shadow">FIO 2001 & SECP</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-serif font-bold text-2xl text-navy-800 dark:text-white mb-1">Banking & Corporate Law</h3>
-                            <p class="font-urdu text-[17px] font-semibold text-gold-800 dark:text-gold-300 mb-3" lang="ur" dir="rtl">بینکنگ ریکوری، SECP اور کمپنی قوانین</p>
-                            <p class="text-navy-700 dark:text-navy-200 text-sm leading-relaxed mb-6">Representation before Banking Courts of Sindh, finance recovery litigation, regulatory compliance, SECP corporate filings, and contract drafting.</p>
-                        </div>
-                        <a href="practice-banking.html" class="block text-center text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400 hover:text-navy-900 dark:hover:text-white mb-3 transition-colors">View Practice Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                        <a href="contact.html?area=Corporate" class="w-full bg-navy-900 hover:bg-gold-500 text-gold-400 hover:text-navy-900 font-bold py-3 rounded text-center text-[11px] uppercase tracking-[0.15em] transition-colors border border-gold-500/20">Consult Corporate Counsel</a>
-                    </div>
-                </div>
-
-                <!-- Practice 4 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col h-full group reveal">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/practices/family.jpg" alt="Family Law" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-4 bg-navy-800 text-gold-400 border border-gold-500/40 font-bold font-mono text-xs px-2.5 py-0.5 rounded shadow">Family Courts Act 1964</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-serif font-bold text-2xl text-navy-800 dark:text-white mb-1">Family & Custody Law</h3>
-                            <p class="font-urdu text-[17px] font-semibold text-gold-800 dark:text-gold-300 mb-3" lang="ur" dir="rtl">خلع، بچوں کی کسٹڈی اور سرپرستی سرٹیفکیٹ</p>
-                            <p class="text-navy-700 dark:text-navy-200 text-sm leading-relaxed mb-6">Legal assistance in Khula, divorce, minor child custody, dower/maintenance recovery suits, and guardianship certificate applications.</p>
-                        </div>
-                        <a href="practice-family.html" class="block text-center text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400 hover:text-navy-900 dark:hover:text-white mb-3 transition-colors">View Practice Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                        <a href="contact.html?area=Family" class="w-full bg-navy-900 hover:bg-gold-500 text-gold-400 hover:text-navy-900 font-bold py-3 rounded text-center text-[11px] uppercase tracking-[0.15em] transition-colors border border-gold-500/20">Consult Family Lawyer</a>
-                    </div>
-                </div>
-
-                <!-- Practice 5 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col h-full group reveal" style="transition-delay: 100ms">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/practices/property.jpg" alt="Property Law" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-4 bg-gold-500 text-navy-900 font-bold font-mono text-xs px-2.5 py-0.5 rounded shadow">Sindh Rent & Succession Laws</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-serif font-bold text-2xl text-navy-800 dark:text-white mb-1">Property & Succession</h3>
-                            <p class="font-urdu text-[17px] font-semibold text-gold-800 dark:text-gold-300 mb-3" lang="ur" dir="rtl">جائیداد کاغذات تصدیق، تصفیہ و وراثت نامہ</p>
-                            <p class="text-navy-700 dark:text-navy-200 text-sm leading-relaxed mb-6">Property title verification, lease deed drafting, eviction suits under Rent Restriction Laws, succession certificates, and letter of administration.</p>
-                        </div>
-                        <a href="practice-property.html" class="block text-center text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400 hover:text-navy-900 dark:hover:text-white mb-3 transition-colors">View Practice Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                        <a href="contact.html?area=Property" class="w-full bg-navy-900 hover:bg-gold-500 text-gold-400 hover:text-navy-900 font-bold py-3 rounded text-center text-[11px] uppercase tracking-[0.15em] transition-colors border border-gold-500/20">Consult Property Advocate</a>
-                    </div>
-                </div>
-
-                <!-- Practice 6 -->
-                <div class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden flex flex-col h-full group reveal" style="transition-delay: 200ms">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/practices/cyber.jpg" alt="Cyber Crime" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-4 bg-navy-800 text-gold-400 border border-gold-500/40 font-bold font-mono text-xs px-2.5 py-0.5 rounded shadow">PECA Act 2016 & FIA</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-serif font-bold text-2xl text-navy-800 dark:text-white mb-1">Cyber Crime & PECA Law</h3>
-                            <p class="font-urdu text-[17px] font-semibold text-gold-800 dark:text-gold-300 mb-3" lang="ur" dir="rtl">ایف آئی اے سائبر کرائم نوٹسز و دفاعی مشاورت</p>
-                            <p class="text-navy-700 dark:text-navy-200 text-sm leading-relaxed mb-6">Legal defense for FIA Cyber Crime Wing notices, financial harassment, digital defamation, and online fraud investigations.</p>
-                        </div>
-                        <a href="practice-cyber.html" class="block text-center text-[11px] font-bold uppercase tracking-[0.15em] text-gold-800 dark:text-gold-400 hover:text-navy-900 dark:hover:text-white mb-3 transition-colors">View Practice Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                        <a href="contact.html?area=Cyber" class="w-full bg-navy-900 hover:bg-gold-500 text-gold-400 hover:text-navy-900 font-bold py-3 rounded text-center text-[11px] uppercase tracking-[0.15em] transition-colors border border-gold-500/20">Consult Cyber Lawyer</a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
+
+    <section class="py-14 sm:py-20 bg-white dark:bg-navy-800/40 border-t border-navy-100 dark:border-navy-700/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="text-gold-800 dark:text-gold-500 text-[11px] font-semibold tracking-[0.2em] uppercase">What We Handle</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-800 dark:text-white mt-2">Services Under This Practice</h2>
+                <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-premium bg-warm-50 dark:bg-navy-900 rounded-xl p-6 reveal">
+                    <div class="w-11 h-11 rounded-lg bg-navy-900 flex items-center justify-center mb-4"><i class="fa-solid fa-building-columns text-gold-400"></i></div>
+                    <h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white mb-2">Banking Court Litigation</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Recovery suits and defense before the Banking Courts of Sindh under the FIO 2001 — including leave to defend.</p>
+                </div>
+
+                <div class="card-premium bg-warm-50 dark:bg-navy-900 rounded-xl p-6 reveal">
+                    <div class="w-11 h-11 rounded-lg bg-navy-900 flex items-center justify-center mb-4"><i class="fa-solid fa-money-check-dollar text-gold-400"></i></div>
+                    <h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white mb-2">Cheque Dishonor (489-F PPC)</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Criminal complaints and recovery on bounced cheques, from legal notice to trial.</p>
+                </div>
+
+                <div class="card-premium bg-warm-50 dark:bg-navy-900 rounded-xl p-6 reveal">
+                    <div class="w-11 h-11 rounded-lg bg-navy-900 flex items-center justify-center mb-4"><i class="fa-solid fa-registered text-gold-400"></i></div>
+                    <h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white mb-2">SECP Incorporation & Compliance</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Private limited company incorporation, statutory filings, and regulatory correspondence with SECP.</p>
+                </div>
+
+                <div class="card-premium bg-warm-50 dark:bg-navy-900 rounded-xl p-6 reveal">
+                    <div class="w-11 h-11 rounded-lg bg-navy-900 flex items-center justify-center mb-4"><i class="fa-solid fa-file-contract text-gold-400"></i></div>
+                    <h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white mb-2">Commercial Contracts</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Loan agreements, distributor/dealer agreements, service contracts and NDAs drafted for enforceability.</p>
+                </div>
+
+                <div class="card-premium bg-warm-50 dark:bg-navy-900 rounded-xl p-6 reveal">
+                    <div class="w-11 h-11 rounded-lg bg-navy-900 flex items-center justify-center mb-4"><i class="fa-solid fa-users-gear text-gold-400"></i></div>
+                    <h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white mb-2">Shareholder & Partnership Disputes</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Deadlock resolution, oppression claims and partnership dissolutions with minimal business disruption.</p>
+                </div>
+
+                <div class="card-premium bg-warm-50 dark:bg-navy-900 rounded-xl p-6 reveal">
+                    <div class="w-11 h-11 rounded-lg bg-navy-900 flex items-center justify-center mb-4"><i class="fa-solid fa-handshake-angle text-gold-400"></i></div>
+                    <h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white mb-2">Corporate Retainers</h3>
+                    <p class="text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Standing legal counsel for banks, companies and startups — opinions, notices and board-level documentation.</p>
+                </div></div>
+        </div>
+    </section>
+
+    <section class="py-14 sm:py-20 bg-navy-900 text-white relative grain">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <span class="text-gold-500 text-[11px] font-semibold tracking-[0.2em] uppercase">How We Work</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-semibold mt-2">Your Case, Step by Step</h2>
+            </div>
+            <div class="space-y-8">
+                <div class="flex gap-5 reveal">
+                    <div class="flex-shrink-0 w-11 h-11 rounded-full bg-gold-500 text-navy-900 font-serif font-bold text-lg flex items-center justify-center">1</div>
+                    <div><h3 class="font-serif font-bold text-xl text-white mb-1">Exposure Review</h3><p class="text-slate-400 text-sm leading-relaxed">We examine the finance agreements, default notices and statements of account to map exact liability — for banks and borrowers alike.</p></div>
+                </div>
+
+                <div class="flex gap-5 reveal">
+                    <div class="flex-shrink-0 w-11 h-11 rounded-full bg-gold-500 text-navy-900 font-serif font-bold text-lg flex items-center justify-center">2</div>
+                    <div><h3 class="font-serif font-bold text-xl text-white mb-1">Notice & Negotiation</h3><p class="text-slate-400 text-sm leading-relaxed">A calibrated legal notice often produces restructuring or settlement before the Banking Court gets involved.</p></div>
+                </div>
+
+                <div class="flex gap-5 reveal">
+                    <div class="flex-shrink-0 w-11 h-11 rounded-full bg-gold-500 text-navy-900 font-serif font-bold text-lg flex items-center justify-center">3</div>
+                    <div><h3 class="font-serif font-bold text-xl text-white mb-1">Court Proceedings</h3><p class="text-slate-400 text-sm leading-relaxed">Suit or defense filed with banking-law precision: plaint, leave applications, evidence of finance documents.</p></div>
+                </div>
+
+                <div class="flex gap-5 reveal">
+                    <div class="flex-shrink-0 w-11 h-11 rounded-full bg-gold-500 text-navy-900 font-serif font-bold text-lg flex items-center justify-center">4</div>
+                    <div><h3 class="font-serif font-bold text-xl text-white mb-1">Compliance & Closure</h3><p class="text-slate-400 text-sm leading-relaxed">Decree execution or settlement implementation, plus SECP/regulatory filings closed out cleanly.</p></div>
+                </div></div>
+        </div>
+    </section>
+
+    <section class="py-14 sm:py-20 bg-white dark:bg-navy-800/40 border-t border-navy-100 dark:border-navy-700/40">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 reveal">
+                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-800 dark:text-white">Common Questions</h2>
+                <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-4"></div>
+            </div>
+            <div class="space-y-4">
+                
+                <div class="faq-item card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center gap-4 px-5 sm:px-6 py-4 text-left">
+                        <span class="font-semibold text-navy-800 dark:text-white text-[15px]">Bank ne recovery notice bheja hai — kya karun?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron text-gold-600 text-sm flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 sm:px-6"><p class="pb-5 text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Notice ko nazar-andaz na karein. Banking Court me muddat sakht hoti hai; leave-to-defend ki darkhwast waqt par na di to yak-tarfa decree ho sakti hai. Fori qanuni raaye lein.</p></div>
+                </div>
+                <div class="faq-item card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center gap-4 px-5 sm:px-6 py-4 text-left">
+                        <span class="font-semibold text-navy-800 dark:text-white text-[15px]">Cheque bounce hone par kya qanooni karwai hai?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron text-gold-600 text-sm flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 sm:px-6"><p class="pb-5 text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Section 489-F PPC ke tehat criminal complaint aur alag se raqam ki recovery — dono rastay ikatthe chal sakte hain. Pehle registered legal notice bhejna zaroori hota hai.</p></div>
+                </div>
+                <div class="faq-item card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center gap-4 px-5 sm:px-6 py-4 text-left">
+                        <span class="font-semibold text-navy-800 dark:text-white text-[15px]">Company register karwane me kitna waqt lagta hai?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron text-gold-600 text-sm flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 sm:px-6"><p class="pb-5 text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Documents mukammal hon to SECP incorporation aam tor par chand hafton me ho jati hai. Hum name reservation se lekar statutory filings tak poora process sambhalte hain.</p></div>
+                </div>
+                <div class="faq-item card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center gap-4 px-5 sm:px-6 py-4 text-left">
+                        <span class="font-semibold text-navy-800 dark:text-white text-[15px]">Kya bank yak-tarfa decree le sakta hai?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron text-gold-600 text-sm flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 sm:px-6"><p class="pb-5 text-sm text-navy-700 dark:text-navy-200 leading-relaxed">Agar mudda-alaih waqt par pesh na ho ya leave to defend na maange to ji. Isi liye banking notices par fori action zaroori hai — der nuqsan-deh hoti hai.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14 sm:py-20 bg-navy-900 text-white relative grain">
+        <div class="max-w-3xl mx-auto px-4 text-center relative z-10 reveal">
+            <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-3">Discuss Your Banking & Corporate Law Matter</h2>
+            <p class="text-slate-400 text-sm mb-8">Call or WhatsApp now — your first case assessment is confidential and without obligation.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+923112610683" class="bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold px-8 py-3.5 rounded text-xs uppercase tracking-[0.15em] transition-colors"><i class="fa-solid fa-phone mr-2"></i>+92 311 2610683</a>
+                <a href="https://wa.me/923112610683" target="_blank" rel="noopener" class="border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-navy-900 font-bold px-8 py-3.5 rounded text-xs uppercase tracking-[0.15em] transition-colors"><i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-14 sm:py-20 bg-warm-50 dark:bg-navy-900 border-t border-navy-100 dark:border-navy-700/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl font-semibold text-navy-800 dark:text-white mb-8 reveal">Related Practice Areas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="practice-criminal.html" class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden group reveal">
+                    <div class="h-36 overflow-hidden relative"><img src="/practices/criminal.jpg" alt="Criminal Defense & Bail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div></div>
+                    <div class="p-5"><h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white group-hover:text-gold-600 transition-colors">Criminal Defense & Bail</h3><p class="text-[11px] font-bold uppercase tracking-[0.15em] text-gold-700 dark:text-gold-400 mt-2">View practice <i class="fa-solid fa-arrow-right ml-1"></i></p></div>
+                </a>
+
+                <a href="practice-civil.html" class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden group reveal">
+                    <div class="h-36 overflow-hidden relative"><img src="/practices/civil.jpg" alt="Civil & Commercial Suits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div></div>
+                    <div class="p-5"><h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white group-hover:text-gold-600 transition-colors">Civil & Commercial Suits</h3><p class="text-[11px] font-bold uppercase tracking-[0.15em] text-gold-700 dark:text-gold-400 mt-2">View practice <i class="fa-solid fa-arrow-right ml-1"></i></p></div>
+                </a>
+
+                <a href="practice-family.html" class="card-premium bg-white dark:bg-navy-800 rounded-xl overflow-hidden group reveal">
+                    <div class="h-36 overflow-hidden relative"><img src="/practices/family.jpg" alt="Family & Custody Law" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div></div>
+                    <div class="p-5"><h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white group-hover:text-gold-600 transition-colors">Family & Custody Law</h3><p class="text-[11px] font-bold uppercase tracking-[0.15em] text-gold-700 dark:text-gold-400 mt-2">View practice <i class="fa-solid fa-arrow-right ml-1"></i></p></div>
+                </a></div>
+        </div>
+    </section>
+    <p class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-[11px] text-slate-500 dark:text-navy-400 leading-relaxed">Disclaimer: This page provides general information about Pakistani law and is not legal advice. Every case turns on its own facts — consult an advocate for advice on your matter.</p>
 
     <!-- FOOTER -->
     <footer class="bg-navy-900 text-slate-400 py-14 border-t border-navy-800">
@@ -346,18 +408,6 @@
                 }
             }
         }
-        
-        // Intersection Observer for animations
-        window.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
@@ -381,6 +431,26 @@
             icon.className = 'fa-solid fa-bars text-xl';
             btn.setAttribute('aria-expanded', 'false');
         }
+
+        function toggleFaq(el) {
+            const item = el.closest('.faq-item');
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        }
+
+        // Intersection Observer for animations
+        window.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+        
     </script>
 </body>
 </html>
