@@ -53,7 +53,7 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: { 50: '#f0f3f7', 100: '#d5dce6', 200: '#a8b8cc', 700: '#0f2136', 800: '#091520', 900: '#060e17' },
+                        navy: { 50: '#f0f3f7', 100: '#d5dce6', 200: '#a8b8cc', 300: '#93a7bd', 400: '#6e849c', 500: '#50677e', 600: '#33465a', 700: '#0f2136', 800: '#091520', 900: '#060e17' },
                         gold: { 300: '#e8d5b5', 400: '#d4bc94', 500: '#bfa97a', 600: '#a68e5d', 700: '#8a7345' },
                         warm: { 50: '#faf8f5', 100: '#f5f0e8' }
                     },
@@ -117,7 +117,7 @@
         .nav-link:hover::after { width: 100%; }
     </style>
 </head>
-<body class="bg-warm-50 dark:bg-navy-900 text-slate-800 dark:text-slate-200 font-sans antialiased transition-colors duration-300">
+<body class="bg-warm-50 dark:bg-navy-900 text-navy-800 dark:text-navy-200 font-sans antialiased transition-colors duration-300">
 
     <!-- TOP CORPORATE UTILITY BAR -->
     <div class="bg-navy-900 text-navy-200 text-[11px] py-2 px-4 sm:px-8 border-b border-gold-700/30 flex flex-wrap justify-between items-center sticky top-0 z-50">
@@ -126,26 +126,26 @@
                 <i class="fa-regular fa-clock mr-1.5 text-gold-600"></i> Mon – Sat: 9 AM – 8 PM
             </span>
             <span class="hidden md:inline text-navy-700">|</span>
-            <span class="flex items-center text-slate-400">
+            <span class="flex items-center text-navy-400">
                 <i class="fa-solid fa-scale-balanced mr-1.5 text-gold-600"></i> SBC Reg: 663/BC
             </span>
         </div>
         <div class="flex items-center space-x-3">
-            <a href="tel:+923103381280" class="hover:text-gold-400 transition-colors flex items-center text-slate-400">
+            <a href="tel:+923103381280" class="hover:text-gold-400 transition-colors flex items-center text-navy-400">
                 <i class="fa-solid fa-phone mr-1 text-gold-600 text-[9px]"></i> +92 310 338 1280
             </a>
             <span class="text-navy-700">|</span>
             <a href="https://wa.me/923112610683" target="_blank" rel="noopener noreferrer" class="text-emerald-400/90 hover:text-emerald-300 transition-colors flex items-center font-medium">
                 <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
             </a>
-            <button onclick="toggleDarkMode()" class="ml-1 p-1 rounded text-slate-500 hover:text-gold-400 transition-colors" title="Toggle Theme">
+            <button onclick="toggleDarkMode()" class="ml-1 p-1 rounded text-navy-500 hover:text-gold-400 transition-colors" title="Toggle Theme">
                 <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
             </button>
         </div>
     </div>
 
     <!-- MAIN CORPORATE NAVBAR -->
-    <header class="bg-white/98 dark:bg-navy-800/98 backdrop-blur-xl shadow-soft sticky top-[33px] z-40 border-b border-slate-100 dark:border-navy-700/60 transition-colors">
+    <header class="bg-white/98 dark:bg-navy-800/98 backdrop-blur-xl shadow-soft sticky top-[33px] z-40 border-b border-navy-100 dark:border-navy-700/60 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#home" class="flex items-center space-x-3 group">
                 <div class="relative w-11 h-11 flex-shrink-0 rounded-lg bg-navy-900 flex items-center justify-center border border-gold-600/30 group-hover:border-gold-500/60 transition-colors">
@@ -162,7 +162,7 @@
                 </div>
             </a>
             
-            <nav class="hidden lg:flex items-center space-x-8 text-[13px] font-medium text-slate-600 dark:text-slate-300">
+            <nav class="hidden lg:flex items-center space-x-8 text-[13px] font-medium text-navy-600 dark:text-navy-300">
                 <a href="#about" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">The Firm</a>
                 <a href="#practices" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Practices</a>
                 <a href="#clients" class="nav-link hover:text-navy-900 dark:hover:text-white transition-colors">Retainers</a>
@@ -172,13 +172,13 @@
                 </a>
             </nav>
 
-            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-600 dark:text-slate-300" aria-label="Menu" aria-expanded="false">
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-navy-600 dark:text-navy-300" aria-label="Menu" aria-expanded="false">
                 <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
-        <div id="mobileMenu" class="lg:hidden bg-white dark:bg-navy-800 border-t border-slate-100 dark:border-navy-700/60">
-            <nav class="flex flex-col px-5 py-4 space-y-1 text-sm text-slate-700 dark:text-slate-200">
+        <div id="mobileMenu" class="lg:hidden bg-white dark:bg-navy-800 border-t border-navy-100 dark:border-navy-700/60">
+            <nav class="flex flex-col px-5 py-4 space-y-1 text-sm text-navy-700 dark:text-navy-200">
                 <a href="#about" onclick="closeMobileMenu()" class="py-3 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">The Firm</a>
                 <a href="#practices" onclick="closeMobileMenu()" class="py-3 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">Practices</a>
                 <a href="#clients" onclick="closeMobileMenu()" class="py-3 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">Retainers</a>
@@ -214,7 +214,7 @@
                     سندھ بھر کی عدالتوں اور ٹریبونلز میں مستند قانونی مشاورت اور عدالتی پیروی
                 </div>
                 
-                <p class="text-slate-400 text-sm sm:text-base mb-10 max-w-xl leading-relaxed">
+                <p class="text-navy-400 text-sm sm:text-base mb-10 max-w-xl leading-relaxed">
                     Representing clients before the High Court of Sindh, Banking Courts, Sessions Courts, and Corporate Regulatory Bodies. Full-service legal practice established in 2002 with 24+ years of courtroom excellence.
                 </p>
                 
@@ -242,21 +242,21 @@
                             <div class="w-9 h-9 rounded bg-gold-500/20 text-gold-500 flex items-center justify-center flex-shrink-0 border border-gold-500/30 mt-0.5"><i class="fa-solid fa-award text-base"></i></div>
                             <div>
                                 <p class="text-white font-semibold">24+ Years Courtroom Experience</p>
-                                <p class="text-slate-400 text-xs mt-0.5">Founded by Senior Advocate Shamsuddin Rajper (Ex-Deputy Attorney General for Pakistan)</p>
+                                <p class="text-navy-400 text-xs mt-0.5">Founded by Senior Advocate Shamsuddin Rajper (Ex-Deputy Attorney General for Pakistan)</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-3.5">
                             <div class="w-9 h-9 rounded bg-gold-500/20 text-gold-500 flex items-center justify-center flex-shrink-0 border border-gold-500/30 mt-0.5"><i class="fa-solid fa-gavel text-base"></i></div>
                             <div>
                                 <p class="text-white font-semibold">High Court Appellate Standing</p>
-                                <p class="text-slate-400 text-xs mt-0.5">High Court of Sindh, Karachi</p>
+                                <p class="text-navy-400 text-xs mt-0.5">High Court of Sindh, Karachi</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-3.5">
                             <div class="w-9 h-9 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 border border-emerald-500/30 mt-0.5"><i class="fa-solid fa-building-columns text-base"></i></div>
                             <div>
                                 <p class="text-white font-semibold">Sindh Bar Council Regulated</p>
-                                <p class="text-slate-400 text-xs mt-0.5">Official Bar Registration No: 663/BC | Certified Legal Practice</p>
+                                <p class="text-navy-400 text-xs mt-0.5">Official Bar Registration No: 663/BC | Certified Legal Practice</p>
                             </div>
                         </li>
                     </ul>
@@ -266,7 +266,7 @@
     </section>
 
     <!-- TRUSTED BY LEADING INSTITUTIONS : TICKER ONLY -->
-    <section class="bg-[#f1eff6] dark:bg-navy-800 py-16 sm:py-20 border-b border-slate-100 dark:border-navy-700/40 transition-colors relative overflow-hidden">
+    <section class="bg-warm-100 dark:bg-navy-800 py-16 sm:py-20 border-b border-navy-100 dark:border-navy-700/40 transition-colors relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center sm:text-left mb-10">
                 <span class="text-gold-600 text-[11px] font-semibold tracking-[0.2em] uppercase">Institutional Retainers & Corporate Clients</span>
@@ -275,14 +275,14 @@
 
             <!-- Ticker : borderless logo cloud, edge fades, pauses on hover -->
             <div id="partnerMarqueeView" class="relative overflow-hidden py-6">
-                <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#f1eff6] dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
-                <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#f1eff6] dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-warm-100 dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-warm-100 dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
 
                 <div class="animate-logo-marquee flex items-center hover:[animation-play-state:paused]" id="tickerContainer">
                 </div>
             </div>
             <div class="flex justify-end mt-2 pr-1">
-                <button id="tickerPauseBtn" onclick="toggleTickerPause()" class="text-[11px] font-medium tracking-[0.25em] uppercase text-slate-400 dark:text-slate-500 hover:text-navy-800 dark:hover:text-gold-400 transition-colors">
+                <button id="tickerPauseBtn" onclick="toggleTickerPause()" class="text-[11px] font-medium tracking-[0.25em] uppercase text-navy-400 dark:text-navy-500 hover:text-navy-800 dark:hover:text-gold-400 transition-colors">
                     Pause
                 </button>
             </div>
@@ -303,14 +303,14 @@
                     </h2>
                     <div class="w-16 h-[2px] bg-gradient-to-r from-gold-500 to-transparent mb-8"></div>
                     
-                    <p class="text-slate-600 dark:text-slate-300 mb-5 text-[15px] leading-relaxed">
+                    <p class="text-navy-600 dark:text-navy-300 mb-5 text-[15px] leading-relaxed">
                         Established in 2002 by Senior Advocate <strong class="text-navy-800 dark:text-gold-400">Mr. Shamsuddin Rajper</strong> (Ex-Deputy Attorney General for Pakistan), Karachi Legal House has delivered robust legal advocacy across District Courts, Special Tribunals, and the High Court of Sindh.
                     </p>
-                    <p class="text-slate-600 dark:text-slate-300 mb-8 text-[15px] leading-relaxed">
+                    <p class="text-navy-600 dark:text-navy-300 mb-8 text-[15px] leading-relaxed">
                         Based in <strong>Karachi</strong>, our firm handles high-stakes criminal trials, complex civil disputes, corporate compliance, and banking litigation under strict regulatory oversight.
                     </p>
                     
-                    <div class="p-5 bg-white dark:bg-navy-800 rounded-lg border-l-2 border-gold-500 text-slate-600 dark:text-slate-300 font-serif italic text-lg leading-relaxed shadow-soft">
+                    <div class="p-5 bg-white dark:bg-navy-800 rounded-lg border-l-2 border-gold-500 text-navy-600 dark:text-navy-300 font-serif italic text-lg leading-relaxed shadow-soft">
                         "Delivering ethical, precise, and result-oriented legal counsel to protect client interests at every level of the Pakistani judicial system."
                     </div>
                 </div>
@@ -319,25 +319,25 @@
                     <div class="flex items-center justify-between border-b border-white/[0.06] pb-4 mb-7">
                         <div>
                             <h3 class="font-serif text-xl font-semibold text-white">Karachi Legal House</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Licensed Advocates & Legal Consultants</p>
+                            <p class="text-xs text-navy-400 mt-0.5">Licensed Advocates & Legal Consultants</p>
                         </div>
                         <span class="text-gold-500 text-xs font-medium tracking-wider">663/BC</span>
                     </div>
                     <div class="space-y-5 text-sm">
                         <div class="flex items-center justify-between border-b border-white/[0.04] pb-3">
-                            <span class="text-slate-400">Jurisdiction</span>
+                            <span class="text-navy-400">Jurisdiction</span>
                             <span class="font-medium text-white text-right">High Court of Sindh & Subordinate Benches</span>
                         </div>
                         <div class="flex items-center justify-between border-b border-white/[0.04] pb-3">
-                            <span class="text-slate-400">Bar Affiliations</span>
+                            <span class="text-navy-400">Bar Affiliations</span>
                             <span class="font-medium text-white">SHCBA & KBA</span>
                         </div>
                         <div class="flex items-center justify-between border-b border-white/[0.04] pb-3">
-                            <span class="text-slate-400">Experience</span>
+                            <span class="text-navy-400">Experience</span>
                             <span class="font-medium text-white">24+ Years (Est. 2002)</span>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-slate-400">Principal Office</span>
+                            <span class="text-navy-400">Principal Office</span>
                             <span class="font-medium text-white text-right">Phase 2, DHA Karachi</span>
                         </div>
                     </div>
@@ -347,24 +347,24 @@
     </section>
 
     <!-- PRACTICE AREAS -->
-    <section id="practices" class="py-24 bg-white dark:bg-navy-800/40 border-t border-slate-100 dark:border-navy-700/40 transition-colors">
+    <section id="practices" class="py-24 bg-white dark:bg-navy-800/40 border-t border-navy-100 dark:border-navy-700/40 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
                 <span class="text-gold-600 text-[11px] font-semibold tracking-[0.2em] uppercase">Specialized Legal Services</span>
                 <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-800 dark:text-white mt-2 mb-3">Core Practice Areas</h2>
                 <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mb-5"></div>
-                <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-sm">Comprehensive legal representation governed by statutory law and judicial precedents.</p>
+                <p class="text-navy-500 dark:text-navy-400 max-w-xl mx-auto text-sm">Comprehensive legal representation governed by statutory law and judicial precedents.</p>
             </div>
 
             <!-- Filter Tabs -->
             <div class="flex flex-wrap justify-center gap-2 mb-10" id="practiceTabs">
                 <button onclick="filterPractices('all')" class="practice-tab-btn active px-4 py-2 rounded text-xs font-medium bg-navy-900 text-white transition-all">All</button>
-                <button onclick="filterPractices('criminal')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Criminal</button>
-                <button onclick="filterPractices('civil')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Civil</button>
-                <button onclick="filterPractices('corporate')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Banking / Corporate</button>
-                <button onclick="filterPractices('family')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Family</button>
-                <button onclick="filterPractices('property')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Property</button>
-                <button onclick="filterPractices('cyber')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Cyber PECA</button>
+                <button onclick="filterPractices('criminal')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Criminal</button>
+                <button onclick="filterPractices('civil')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Civil</button>
+                <button onclick="filterPractices('corporate')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Banking / Corporate</button>
+                <button onclick="filterPractices('family')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Family</button>
+                <button onclick="filterPractices('property')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Property</button>
+                <button onclick="filterPractices('cyber')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Cyber PECA</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="practiceAreasGrid">
@@ -373,14 +373,14 @@
     </section>
 
     <!-- CLIENT RETAINERS & CORPORATE PORTFOLIO -->
-    <section id="clients" class="py-24 bg-warm-50 dark:bg-navy-900 border-t border-slate-100 dark:border-navy-700/40 transition-colors">
+    <section id="clients" class="py-24 bg-warm-50 dark:bg-navy-900 border-t border-navy-100 dark:border-navy-700/40 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <span class="text-gold-600 text-[11px] font-semibold tracking-[0.2em] uppercase">Institutional Counsel & Panel Retainers</span>
                 <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-navy-800 dark:text-white mt-2 mb-3">Client Retainers & Corporate Portfolio</h2>
                 <p class="font-urdu text-sm font-semibold text-gold-600 mb-3" lang="ur" dir="rtl">نمایاں کارپوریٹ ادارے، بینکس اور سرکاری محکمے جن کی وکالت کراچی لیگل ہاؤس نے کی</p>
                 <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mb-5"></div>
-                <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm">
+                <p class="text-navy-500 dark:text-navy-400 max-w-2xl mx-auto text-sm">
                     Legal counsel and retainer representation provided to leading commercial banks, industrial conglomerates, FinTech entities, and public sector defense bodies across Pakistan.
                 </p>
             </div>
@@ -405,7 +405,7 @@
     </section>
 
     <!-- CONTACT & OFFICES -->
-    <section id="contact" class="py-24 bg-white dark:bg-navy-800/60 border-t border-slate-100 dark:border-navy-700/40 transition-colors">
+    <section id="contact" class="py-24 bg-white dark:bg-navy-800/60 border-t border-navy-100 dark:border-navy-700/40 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-14">
                 
@@ -430,7 +430,7 @@
                                 <p class="text-[11px] text-gold-400 font-mono">Principal Seat Advocate Chambers</p>
                             </div>
                         </div>
-                        <div class="p-5 space-y-3.5 text-xs text-slate-600 dark:text-slate-300">
+                        <div class="p-5 space-y-3.5 text-xs text-navy-600 dark:text-navy-300">
                             <div class="flex items-start space-x-2.5">
                                 <i class="fa-solid fa-location-dot text-gold-500 text-sm mt-0.5"></i>
                                 <div>
@@ -438,21 +438,21 @@
                                     <p>Building 28C, Old Sunset Boulevard, Phase 2, DHA, Karachi, Sindh. (15 mins from High Court of Sindh, Court Road)</p>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 border-t border-slate-100 dark:border-navy-800 font-mono text-[11px]">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 border-t border-navy-100 dark:border-navy-800 font-mono text-[11px]">
                                 <a href="tel:+923103381280" class="flex items-center text-gold-500 hover:underline">
                                     <i class="fa-solid fa-phone mr-1.5 text-gold-500"></i> +92 310 3381280
                                 </a>
                                 <a href="https://wa.me/923112610683" target="_blank" class="flex items-center text-emerald-500 hover:underline">
                                     <i class="fa-brands fa-whatsapp mr-1.5 text-emerald-500"></i> +92 311 2610683
                                 </a>
-                                <div class="col-span-1 sm:col-span-2 flex items-center text-slate-400">
+                                <div class="col-span-1 sm:col-span-2 flex items-center text-navy-400">
                                     <i class="fa-solid fa-envelope mr-1.5 text-gold-500"></i> karachi@karachilegalhouse.com
                                 </div>
                             </div>
-                            <div class="bg-slate-50 dark:bg-navy-800 p-3 rounded border border-slate-200 dark:border-navy-700 flex justify-between items-center text-[11px]">
+                            <div class="bg-navy-50 dark:bg-navy-800 p-3 rounded border border-navy-200 dark:border-navy-700 flex justify-between items-center text-[11px]">
                                 <div>
-                                    <span class="text-slate-400 block font-mono">TIMINGS:</span>
-                                    <span class="font-bold text-navy-800 dark:text-slate-200">Mon - Sat: 9:00 AM - 8:00 PM</span>
+                                    <span class="text-navy-400 block font-mono">TIMINGS:</span>
+                                    <span class="font-bold text-navy-800 dark:text-navy-200">Mon - Sat: 9:00 AM - 8:00 PM</span>
                                 </div>
                                 <a href="https://maps.google.com/?q=28C+Old+Sunset+Boulevard+Phase+2+DHA+Karachi" target="_blank" class="bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold px-3 py-1.5 rounded transition-colors text-[10px] uppercase tracking-wider flex items-center">
                                     <i class="fa-solid fa-map-location-dot mr-1"></i> Map Directions
@@ -465,7 +465,7 @@
                 <!-- Consultation Form -->
                 <div class="lg:col-span-6 reveal">
                     <div class="bg-warm-50 dark:bg-navy-900 p-8 rounded-xl card-premium">
-                        <div class="mb-6 pb-4 border-b border-slate-200 dark:border-navy-700/40">
+                        <div class="mb-6 pb-4 border-b border-navy-200 dark:border-navy-700/40">
                             <h3 class="font-serif text-2xl font-semibold text-navy-800 dark:text-white">Legal Consultation Request</h3>
                             <p class="font-urdu text-xs font-semibold text-gold-600 mt-1" lang="ur" dir="rtl">قانونی مشاورت کا فارم</p>
                         </div>
@@ -473,7 +473,7 @@
                         <div id="consultationFormContainer">
                             <form onsubmit="handleConsultationSubmit(event)" class="space-y-4">
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
                                         Full Name (پورا نام):
                                     </label>
                                     <input 
@@ -481,13 +481,13 @@
                                         id="formFullName"
                                         required
                                         placeholder="Enter your full name"
-                                        class="w-full bg-slate-50 dark:bg-navy-800 border border-slate-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-sm text-slate-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none"
+                                        class="w-full bg-navy-50 dark:bg-navy-800 border border-navy-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-sm text-navy-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none"
                                     />
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
                                             Contact Phone (رابطہ نمبر):
                                         </label>
                                         <input 
@@ -495,16 +495,16 @@
                                             id="formPhone"
                                             required
                                             placeholder="+92 3XX XXXXXXX"
-                                            class="w-full bg-slate-50 dark:bg-navy-800 border border-slate-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-sm text-slate-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none"
+                                            class="w-full bg-navy-50 dark:bg-navy-800 border border-navy-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-sm text-navy-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none"
                                         />
                                     </div>
                                     <div>
-                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
                                             Practice Area (قانونی شعبہ):
                                         </label>
                                         <select 
                                             id="formPracticeArea"
-                                            class="w-full bg-slate-50 dark:bg-navy-800 border border-slate-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-sm text-slate-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none"
+                                            class="w-full bg-navy-50 dark:bg-navy-800 border border-navy-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-sm text-navy-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none"
                                         >
                                             <option value="Criminal Defense & Bail">Criminal Defense & Bail (فوجداری)</option>
                                             <option value="Civil & Commercial Suits">Civil & Commercial Suits (دیوانی)</option>
@@ -517,7 +517,7 @@
                                 </div>
 
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
                                         Legal Matter Summary (کیس کی مختصر تفصیل):
                                     </label>
                                     <textarea 
@@ -525,12 +525,12 @@
                                         rows="4"
                                         required
                                         placeholder="Provide brief details regarding your case, stay order, court appearance, or legal inquiry..."
-                                        class="w-full bg-slate-50 dark:bg-navy-800 border border-slate-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-sm text-slate-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none resize-none"
+                                        class="w-full bg-navy-50 dark:bg-navy-800 border border-navy-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-sm text-navy-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none resize-none"
                                     ></textarea>
                                 </div>
 
-                                <div class="bg-slate-50 dark:bg-navy-800/80 p-3.5 rounded-lg border border-slate-200 dark:border-navy-700 space-y-1">
-                                    <p class="text-xs text-slate-600 dark:text-slate-300 flex items-start">
+                                <div class="bg-navy-50 dark:bg-navy-800/80 p-3.5 rounded-lg border border-navy-200 dark:border-navy-700 space-y-1">
+                                    <p class="text-xs text-navy-600 dark:text-navy-300 flex items-start">
                                         <i class="fa-solid fa-user-shield text-gold-500 mr-2 text-sm mt-0.5 flex-shrink-0"></i>
                                         <span><strong>Attorney-Client Privilege:</strong> All consultations and shared case documents are strictly protected under client-attorney privilege.</span>
                                     </p>
@@ -555,13 +555,13 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-navy-900 text-slate-400 py-12 border-t border-navy-800">
+    <footer class="bg-navy-900 text-navy-400 py-12 border-t border-navy-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6 text-xs">
             <div>
                 <h4 class="text-white font-serif text-xl font-semibold mb-1">Karachi Legal House</h4>
-                <p class="text-slate-500">&copy; 2026 Karachi Legal House. All rights reserved.</p>
+                <p class="text-navy-500">&copy; 2026 Karachi Legal House. All rights reserved.</p>
             </div>
-            <div class="max-w-sm text-slate-500">
+            <div class="max-w-sm text-navy-500">
                 <p>Authorized to practice law throughout the Province of Sindh and superior courts of Pakistan. Sindh Bar Council Registration: 663/BC.</p>
             </div>
         </div>
@@ -576,8 +576,8 @@
     </a>
 
     <!-- MOBILE STICKY CONTACT BAR -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-navy-900 shadow-chakra z-50 flex border-t border-slate-200 dark:border-navy-700">
-        <a href="https://wa.me/923112610683" target="_blank" class="flex-1 py-3.5 flex justify-center items-center text-[#25D366] font-bold text-xs border-r border-slate-200 dark:border-navy-700">
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-navy-900 shadow-chakra z-50 flex border-t border-navy-200 dark:border-navy-700">
+        <a href="https://wa.me/923112610683" target="_blank" class="flex-1 py-3.5 flex justify-center items-center text-[#25D366] font-bold text-xs border-r border-navy-200 dark:border-navy-700">
             <i class="fa-brands fa-whatsapp text-base mr-1.5"></i> WhatsApp Lawyer
         </a>
         <a href="tel:+923103381280" class="flex-1 py-3.5 flex justify-center items-center text-navy-800 dark:text-gold-400 font-bold text-xs">
@@ -588,20 +588,20 @@
     <!-- ADVOCATE PROFILE MODAL -->
     <div id="lawyerModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-navy-900/80 backdrop-blur-sm">
         <div class="bg-white dark:bg-navy-900 rounded-xl shadow-premium max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gold-500/40 relative p-6 sm:p-8">
-            <button onclick="closeLawyerModal()" class="absolute top-4 right-4 text-slate-400 hover:text-navy-900 dark:hover:text-white p-2 rounded-full transition-colors">
+            <button onclick="closeLawyerModal()" class="absolute top-4 right-4 text-navy-400 hover:text-navy-900 dark:hover:text-white p-2 rounded-full transition-colors">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
 
-            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 border-b border-slate-200 dark:border-navy-700 pb-6 mb-6">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 border-b border-navy-200 dark:border-navy-700 pb-6 mb-6">
                 <div id="modalImgContainer" class="w-36 h-48 sm:w-44 sm:h-56 rounded-xl overflow-hidden border-2 border-gold-500 flex-shrink-0 bg-navy-800 flex items-center justify-center text-gold-500 font-serif font-bold text-4xl shadow-soft"></div>
                 <div class="text-center sm:text-left">
                     <h3 id="modalName" class="font-serif text-2xl font-bold text-navy-800 dark:text-gold-500 mb-1"></h3>
                     <p id="modalTitle" class="text-xs font-bold uppercase tracking-wider text-gold-600 dark:text-gold-400 bg-gold-500/10 px-3 py-1 rounded inline-block border border-gold-500/20 mb-2"></p>
-                    <p id="modalSub" class="text-xs text-slate-500 dark:text-slate-400"></p>
+                    <p id="modalSub" class="text-xs text-navy-500 dark:text-navy-400"></p>
                 </div>
             </div>
 
-            <div class="space-y-6 text-slate-700 dark:text-slate-300 text-sm">
+            <div class="space-y-6 text-navy-700 dark:text-navy-300 text-sm">
                 <div>
                     <h4 class="font-bold text-navy-800 dark:text-white text-xs uppercase tracking-wider mb-2 border-l-4 border-gold-500 pl-3">Role & Practice Focus</h4>
                     <p id="modalRole" class="text-xs sm:text-sm leading-relaxed whitespace-pre-line"></p>
@@ -612,15 +612,15 @@
                 </div>
                 <div>
                     <h4 class="font-bold text-navy-800 dark:text-white text-xs uppercase tracking-wider mb-2 border-l-4 border-gold-500 pl-3">Bar Affiliation & Standing</h4>
-                    <p id="modalAffiliation" class="text-xs text-slate-600 dark:text-slate-300"></p>
+                    <p id="modalAffiliation" class="text-xs text-navy-600 dark:text-navy-300"></p>
                 </div>
             </div>
 
-            <div class="mt-8 pt-6 border-t border-slate-200 dark:border-navy-700 flex flex-col sm:flex-row gap-3">
+            <div class="mt-8 pt-6 border-t border-navy-200 dark:border-navy-700 flex flex-col sm:flex-row gap-3">
                 <a id="modalWhatsApp" href="#" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-lg text-center text-xs uppercase tracking-wider flex items-center justify-center shadow-soft transition-colors">
                     <i class="fa-brands fa-whatsapp text-lg mr-2"></i> WhatsApp Consultation
                 </a>
-                <button onclick="closeLawyerModal()" class="py-3 px-6 bg-slate-200 hover:bg-slate-300 dark:bg-navy-800 dark:hover:bg-navy-700 text-slate-700 dark:text-slate-200 font-bold text-xs uppercase rounded-lg transition-colors">Close</button>
+                <button onclick="closeLawyerModal()" class="py-3 px-6 bg-navy-200 hover:bg-navy-300 dark:bg-navy-800 dark:hover:bg-navy-700 text-navy-700 dark:text-navy-200 font-bold text-xs uppercase rounded-lg transition-colors">Close</button>
             </div>
         </div>
     </div>
@@ -645,7 +645,7 @@
                 logo: "/logos/amreli.png",
                 cat: "Heavy Industry & PSX Listed", 
                 badge: "Lead Counsel Mandate", 
-                badgeColor: "bg-red-700 text-white",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Serving as Lead Counsel to Pakistan's largest steel manufacturer (PSX listed) across high-stakes corporate advisory, statutory industrial compliance, and commercial litigation before the High Court of Sindh.", 
                 urdu: "عمریلی اسٹیلز لمیٹڈ — پاکستان کی سب سے بڑی اسٹیل مینوفیکچرر کے لیڈ کونسل؛ کارپوریٹ ایڈوائزری اور عدالتی چارہ جوئی۔" 
             },
@@ -656,7 +656,7 @@
                 logo: "/logos/asaanpay.png",
                 cat: "FinTech & Payment Gateway", 
                 badge: "Lead Corporate Counsel", 
-                badgeColor: "bg-[#0d1b2a] text-[#00b4d8]",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Representing Pakistan's digital payment gateway regularly before the Commercial Courts as well as criminal defense proceedings, PECA 2016 cyber compliance, and SBP regulatory inquiries.", 
                 urdu: "آسان پے — ڈیجیٹل پیمنٹ گیٹ وے کے کمرشل کورٹس، کرمنل پروسیڈنگز، سائبر قوانین اور اسٹیٹ بینک ریگولیٹری امور میں نمائندگی۔" 
             },
@@ -667,7 +667,7 @@
                 logo: "/logos/devtects.png",
                 cat: "Technology & Software", 
                 badge: "Technology Retainer", 
-                badgeColor: "bg-[#1e1b4b] text-[#818cf8]",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Regular representation before Commercial Courts on software licensing enforcement, IT service agreements, intellectual property protection, and technology contract disputes.", 
                 urdu: "ڈیوٹیکٹس پرائیویٹ لمیٹڈ — ٹیکنالوجی فرم کے لیے کمرشل کورٹس میں قانونی چارہ جوئی اور آئی ٹی سروسز معاہداتی تحفظ۔" 
             },
@@ -678,7 +678,7 @@
                 logo: "/logos/jsbank.png",
                 cat: "Commercial Banking", 
                 badge: "Panel Litigation Counsel", 
-                badgeColor: "bg-[#0b2f6d] text-[#f58220]",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Representing JS Bank before the Banking Courts of Sindh and High Court under Financial Institutions Ordinance (FIO) 2001 for asset litigation, legal audits, and financial recovery proceedings.", 
                 urdu: "جے ایس بینک لمیٹڈ — فنانشل انسٹیٹیوشنز آرڈیننس 2001 کے تحت بینکنگ کورٹس اور سندھ ہائی کورٹ میں پینل وکالت اور ریکوری۔" 
             },
@@ -689,7 +689,7 @@
                 logo: "/logos/bankislami.png",
                 cat: "Islamic Financial Institution", 
                 badge: "Banking Panel Counsel", 
-                badgeColor: "bg-[#055b38] text-white",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Retainer panel counsel managing Shariah-compliant financing litigation, default recovery suits, Ijarah/Murabaha contractual enforcement, and appellate representation.", 
                 urdu: "بینک اسلامی پاکستان — اسلامی فنانسنگ تنازعات، ڈیفالٹ ریکوری مقدمات اور معاہدات کے نفاذ کے لیے ریٹینر پینل کونسل۔" 
             },
@@ -700,7 +700,7 @@
                 logo: "/logos/halan.png",
                 cat: "Microfinance & Banking", 
                 badge: "Banking Retainer Counsel", 
-                badgeColor: "bg-black text-[#00e599]",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Advising on statutory recovery litigation before Banking Courts, branch-level risk mitigation, customer default recovery, and SBP regulatory compliance.", 
                 urdu: "ہالان مائیکرو فنانس بینک — بینکنگ کورٹس میں ریکوری، ایس بی پی ریگولیشنز اور فنانشل ڈیفالٹ کیسز کی قانونی پیروی۔" 
             },
@@ -711,7 +711,7 @@
                 logo: "/logos/rangers.png",
                 cat: "Public Sector & State Defense", 
                 badge: "Special Legal Counsel", 
-                badgeColor: "bg-[#14532d] text-[#facc15]",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Special Legal Counsel handling Constitutional Petitions (Writs) under Article 199 before the High Court of Sindh, state defense proceedings, and service jurisdiction matters.", 
                 urdu: "پاکستان رینجرز (سندھ) — سندھ ہائی کورٹ میں آئینی رٹ پٹیشنز، سروس مقدمات اور ریاستی امور میں اسپیشل لیگل کونسل۔" 
             },
@@ -722,7 +722,7 @@
                 logo: "/logos/ptcl.png",
                 cat: "Telecommunications", 
                 badge: "Retainer Panel Counsel", 
-                badgeColor: "bg-[#15803d] text-white",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Handling telecom infrastructure land easement litigation, right-of-way disputes, commercial recovery, and civil appeals across District Courts and High Court of Sindh.", 
                 urdu: "پی ٹی سی ایل — ٹیلی کام انفراسٹرکچر اراضی، رائٹ آف وے تنازعات، دیوانی مقدمات اور ہائی کورٹ اپیلوں میں پینل وکالت۔" 
             },
@@ -733,7 +733,7 @@
                 logo: "/logos/stevta.png",
                 cat: "Government Authority", 
                 badge: "Government Legal Advisor", 
-                badgeColor: "bg-[#064e3b] text-[#a7f3d0]",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Direct legal advisor to Sindh Technical Education & Vocational Training Authority managing service disputes, public procurement compliance, and appellate tribunal defense.", 
                 urdu: "سندھ اسٹیوٹا — سروس لاز، ملازمین انکوائریز، پبلک پروکیورمنٹ رولز اور اپیلٹ ٹریبیونلز میں براہ راست قانونی ایڈوائزر۔" 
             },
@@ -744,7 +744,7 @@
                 logo: "/logos/pathfinder.png",
                 cat: "Security & Industrial Conglomerate", 
                 badge: "Retainer Legal Counsel", 
-                badgeColor: "bg-[#881337] text-white",
+                badgeColor: "bg-navy-800 text-gold-400",
                 desc: "Retainer Legal Counsel to Pathfinder Group and its entities (Wackenhut Pakistan, VRG, iPath, CITADEL Security, SMS Services, SMS Technologies), covering contract drafting and liability defense.", 
                 urdu: "پاتھ فائنڈر گروپ و ویکین ہٹ — سیکیورٹی سروسز، ملازمین قوانین، ثالثی اور گروپ کے تمام کارپوریٹ معاہدات کے چیف ریٹینر۔" 
             }
@@ -819,7 +819,7 @@
             const tickerContainer = document.getElementById('tickerContainer');
             // Professional logo cloud: grayscale at rest, full brand color on hover.
             // Uniform optical sizing keeps every mark balanced.
-            const logoCls = "h-10 sm:h-12 w-auto max-w-[140px] sm:max-w-[170px] object-contain grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-300 select-none";
+            const logoCls = "h-10 sm:h-12 w-auto max-w-[140px] sm:max-w-[170px] object-contain opacity-90 hover:opacity-100 hover:scale-[1.06] transition-all duration-300 select-none";
 
             if (tickerContainer) {
                 const tickerItems = CLIENT_PORTFOLIO.map(c => `
@@ -835,7 +835,7 @@
             activePracticeCategory = category;
             const buttons = document.querySelectorAll('.practice-tab-btn');
             buttons.forEach(btn => {
-                btn.className = "practice-tab-btn px-4 py-2 rounded-full bg-white dark:bg-navy-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-navy-700 hover:border-gold-500 transition-all";
+                btn.className = "practice-tab-btn px-4 py-2 rounded-full bg-white dark:bg-navy-800 text-navy-700 dark:text-navy-200 border border-navy-200 dark:border-navy-700 hover:border-gold-500 transition-all";
             });
             event.target.className = "practice-tab-btn active px-4 py-2 rounded-full bg-gold-500 text-navy-900 font-bold shadow-sm transition-all";
             renderPracticeAreas(category);
@@ -846,7 +846,7 @@
             const items = cat === 'all' ? PRACTICE_AREAS : PRACTICE_AREAS.filter(p => p.cat === cat);
             
             container.innerHTML = items.map((item, index) => `
-                <div class="bg-white dark:bg-navy-900 rounded-xl border border-slate-200 dark:border-navy-700 hover:border-gold-500/50 shadow-soft transition-all duration-300 overflow-hidden flex flex-col h-full group reveal" style="transition-delay: ${index * 100}ms">
+                <div class="bg-white dark:bg-navy-900 rounded-xl border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 shadow-soft transition-all duration-300 overflow-hidden flex flex-col h-full group reveal" style="transition-delay: ${index * 100}ms">
                     <div class="h-48 w-full overflow-hidden relative">
                         <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/30 to-transparent"></div>
@@ -855,7 +855,7 @@
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="font-serif font-bold text-xl text-navy-800 dark:text-white mb-1">${item.title}</h3>
                         <p class="font-urdu text-xs font-semibold text-gold-500 mb-3">${item.urdu}</p>
-                        <p class="text-slate-600 dark:text-slate-300 text-sm mb-5 leading-relaxed flex-grow">${item.desc}</p>
+                        <p class="text-navy-600 dark:text-navy-300 text-sm mb-5 leading-relaxed flex-grow">${item.desc}</p>
                         <a href="https://wa.me/923112610683?text=Inquiry%20regarding%20${encodeURIComponent(item.title)}" target="_blank" class="text-[11px] font-bold text-navy-800 dark:text-gold-400 flex items-center hover:text-gold-500 transition-colors uppercase tracking-[0.15em] mt-auto">
                             <span>Consult Advocate</span>
                             <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
@@ -881,9 +881,9 @@
         function renderClients() {
             const container = document.getElementById('clientPortfolioGrid');
             container.innerHTML = CLIENT_PORTFOLIO.map((c, index) => `
-                <div class="bg-white dark:bg-navy-900 rounded-xl border border-slate-200 dark:border-navy-700/60 hover:border-gold-500/60 transition-all duration-300 shadow-soft hover:shadow-premium flex flex-col justify-between overflow-hidden group reveal" style="transition-delay: ${index * 60}ms">
+                <div class="bg-white dark:bg-navy-900 rounded-xl border border-navy-200 dark:border-navy-700/60 hover:border-gold-500/60 transition-all duration-300 shadow-soft hover:shadow-premium flex flex-col justify-between overflow-hidden group reveal" style="transition-delay: ${index * 60}ms">
                     
-                    <div class="bg-slate-50 dark:bg-navy-800/80 border-b border-slate-100 dark:border-navy-700/60 px-5 py-3 flex items-center justify-between h-20 gap-3">
+                    <div class="bg-navy-50 dark:bg-navy-800/80 border-b border-navy-100 dark:border-navy-700/60 px-5 py-3 flex items-center justify-between h-20 gap-3">
                         <div class="h-12 flex items-center rounded-md px-2 flex-shrink-0" ${c.logoBg ? `style="background:${c.logoBg}"` : ""}>
                             <img src="${c.logo}" alt="${c.name} logo" loading="lazy" class="max-h-full w-auto max-w-[9rem] object-contain" />
                         </div>
@@ -896,9 +896,9 @@
                         <div>
                             <span class="text-[10px] text-gold-600 dark:text-gold-400 font-mono font-bold uppercase tracking-wider block mb-1">${c.cat}</span>
                             <h3 class="font-serif font-bold text-lg text-navy-800 dark:text-white leading-tight mb-2">${c.name}</h3>
-                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-[12px]">${c.desc}</p>
+                            <p class="text-navy-600 dark:text-navy-300 leading-relaxed text-[12px]">${c.desc}</p>
                         </div>
-                        <div class="bg-warm-50 dark:bg-navy-800 p-3 rounded-lg border border-slate-100 dark:border-navy-700/40">
+                        <div class="bg-warm-50 dark:bg-navy-800 p-3 rounded-lg border border-navy-100 dark:border-navy-700/40">
                             <p class="font-urdu text-navy-800 dark:text-gold-400 font-medium leading-relaxed text-[11px]" dir="rtl">${c.urdu}</p>
                         </div>
                     </div>
@@ -916,8 +916,8 @@
                             ${adv.image ? `<img src="${adv.image}" alt="${adv.name}" class="w-36 h-48 sm:w-44 sm:h-56 rounded-xl object-cover border-2 border-gold-600/30 shadow-soft group-hover:scale-105 group-hover:border-gold-500 transition-all duration-500 flex-shrink-0" />` : `<div class="w-36 h-48 sm:w-44 sm:h-56 rounded-xl bg-navy-900 border-2 border-gold-600/30 flex items-center justify-center text-gold-500 font-serif font-bold text-4xl flex-shrink-0">${adv.initials}</div>`}
                             <div class="flex-1">
                                 <h3 class="font-serif font-semibold text-2xl sm:text-3xl text-gold-400 group-hover:text-gold-300 transition-colors mb-1.5">${adv.name}</h3>
-                                <p class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.15em] mb-3 bg-navy-900 px-3 py-1 rounded inline-block border border-gold-500/20">${adv.title}</p>
-                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">${adv.sub}</p>
+                                <p class="text-[10px] font-bold text-navy-300 uppercase tracking-[0.15em] mb-3 bg-navy-900 px-3 py-1 rounded inline-block border border-gold-500/20">${adv.title}</p>
+                                <p class="text-navy-300 text-xs sm:text-sm leading-relaxed mb-4">${adv.sub}</p>
                                 <div class="inline-flex items-center text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
                                     <i class="fa-solid fa-shield-check mr-1.5"></i> Verified SBC Counsel
                                 </div>
@@ -955,7 +955,7 @@
                     <div class="w-16 h-16 rounded-full bg-emerald-600 text-white text-3xl flex items-center justify-center mx-auto shadow-soft"><i class="fa-solid fa-check"></i></div>
                     <h4 class="font-serif text-2xl font-semibold text-navy-800 dark:text-white">Consultation Request Ready</h4>
                     <p class="font-urdu text-sm font-semibold text-gold-600">آپ کی قانونی مشاورت کی درخواست تیار ہے</p>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 max-w-sm mx-auto leading-relaxed">We have opened WhatsApp with your case details — just press <strong>Send</strong> there and our Senior Partner Advocate will contact you shortly.</p>
+                    <p class="text-sm text-navy-600 dark:text-navy-300 max-w-sm mx-auto leading-relaxed">We have opened WhatsApp with your case details — just press <strong>Send</strong> there and our Senior Partner Advocate will contact you shortly.</p>
                     <a href="https://wa.me/923112610683?text=${waText}" target="_blank" class="inline-block mt-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold px-6 py-3 rounded-lg transition">Re-open WhatsApp</a>
                 </div>
             `;
@@ -980,7 +980,7 @@
             }
 
             document.getElementById('modalSpecs').innerHTML = adv.specializations.map(s => `
-                <div class="bg-slate-50 dark:bg-navy-800 p-2.5 rounded border border-slate-200 dark:border-navy-700 text-slate-800 dark:text-slate-200">${s}</div>
+                <div class="bg-navy-50 dark:bg-navy-800 p-2.5 rounded border border-navy-200 dark:border-navy-700 text-navy-800 dark:text-navy-200">${s}</div>
             `).join('');
 
             document.getElementById('lawyerModal').classList.remove('hidden');
