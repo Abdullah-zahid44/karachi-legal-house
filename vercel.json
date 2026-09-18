@@ -1,0 +1,1 @@
+{"$schema":"https://openapi.vercel.sh/vercel.json","buildCommand":"mkdir -p dist && cp *.html dist/ && cp *.jpg dist/ && cp -r public/. dist/","outputDirectory":"dist"}
