@@ -58,8 +58,8 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: #bfa97a; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
-        #mobileMenu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
-        #mobileMenu.open { max-height: 78vh; overflow-y: auto; }
+        html, body { overflow-x: clip; }
+        @supports not (overflow: clip) { html, body { overflow-x: hidden; } }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
         .faq-item.open .faq-answer { max-height: 600px; }
         .faq-item.open .faq-chevron { transform: rotate(180deg); }
@@ -73,7 +73,7 @@
     <!-- TOP CORPORATE UTILITY BAR -->
     <div class="bg-navy-900 text-navy-200 text-[10px] sm:text-[11px] h-[33px] px-3 sm:px-8 border-b border-gold-700/30 flex justify-between items-center gap-2 sticky top-0 z-50 whitespace-nowrap overflow-hidden">
         <div class="flex items-center gap-2 sm:gap-4">
-            <span class="flex items-center text-gold-400 font-medium">
+            <span class="hidden sm:flex items-center text-gold-400 font-medium">
                 <i class="fa-regular fa-clock mr-1.5 text-gold-500"></i> Mon &ndash; Sat: 9 AM &ndash; 8 PM
             </span>
             <span class="hidden md:inline text-navy-600">|</span>
@@ -139,31 +139,54 @@
                 <a href="contact.html" class="bg-navy-900 hover:bg-navy-800 text-gold-400 hover:text-gold-300 px-5 py-2.5 rounded transition-all font-semibold text-xs uppercase tracking-wider">Book Consultation</a>
             </nav>
             
-            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-navy-600 dark:text-navy-300" aria-label="Menu" aria-expanded="false">
-                <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden w-11 h-11 flex items-center justify-center -mr-2 text-navy-700 dark:text-navy-200 hover:bg-warm-100 dark:hover:bg-navy-800 rounded-full transition-colors" aria-label="Open menu" aria-expanded="false">
+                <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
-        <div id="mobileMenu" class="lg:hidden bg-white dark:bg-navy-800 border-t border-navy-100 dark:border-navy-700/60">
-            <nav class="flex flex-col px-5 py-4 space-y-1 text-sm text-navy-700 dark:text-navy-200">
-                <a href="index.html" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors font-medium">Home</a>
-                <span class="px-3 pt-2 text-[10px] uppercase tracking-[0.2em] text-gold-700 dark:text-gold-500 font-semibold">Practice Areas</span>
-                <a href="practice-criminal.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Criminal Defense & Bail</a>
-<a href="practice-civil.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Civil & Commercial Suits</a>
-<a href="practice-banking.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Banking & Corporate Law</a>
-<a href="practice-family.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Family & Custody Law</a>
-<a href="practice-property.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Property & Succession</a>
-<a href="practice-cyber.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">Cyber Crime & PECA Law</a>
-                <a href="practices.html" onclick="closeMobileMenu()" class="py-2.5 px-3 pl-6 rounded text-gold-700 dark:text-gold-400 font-medium hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors text-[13px]">View all practices &rarr;</a>
-                <span class="px-3 pt-2 text-[10px] uppercase tracking-[0.2em] text-gold-700 dark:text-gold-500 font-semibold">Firm</span>
-                <a href="clients.html" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">Retainers</a>
-                <a href="index.html#leadership" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">Advocates</a>
-                <a href="faq.html" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">FAQ</a>
-                <a href="blog.html" onclick="closeMobileMenu()" class="py-2.5 px-3 rounded hover:bg-warm-100 dark:hover:bg-navy-900 transition-colors">Blog</a>
-                <a href="contact.html" onclick="closeMobileMenu()" class="mt-2 bg-navy-900 text-gold-400 py-3 px-4 rounded text-center font-semibold text-xs uppercase tracking-wider">Book Consultation</a>
-            </nav>
-        </div>
+        
     </header>
+    <div id="mobileBackdrop" onclick="closeMobileMenu()" class="fixed inset-0 bg-navy-950/60 backdrop-blur-[2px] z-[60] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden" aria-hidden="true"></div>
+        <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-[86vw] max-w-[340px] bg-white dark:bg-navy-900 z-[61] translate-x-full transition-transform duration-300 ease-out lg:hidden flex flex-col shadow-2xl border-l border-navy-100 dark:border-navy-700/60" aria-hidden="true" role="dialog" aria-label="Site menu">
+            <div class="flex items-center justify-between pl-5 pr-3 py-3 border-b border-navy-100 dark:border-navy-700/60">
+                <span class="flex items-center gap-2.5">
+                    <span class="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 font-serif font-bold text-sm">KLH</span>
+                    <span class="font-serif font-bold text-navy-800 dark:text-white text-[15px] leading-tight">Karachi Legal<br class="sm:hidden"> House</span>
+                </span>
+                <button onclick="closeMobileMenu()" aria-label="Close menu" class="w-11 h-11 flex items-center justify-center rounded-full text-navy-600 dark:text-navy-300 hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-[15px] font-medium text-navy-700 dark:text-navy-200">
+                <a href="index.html" onclick="closeMobileMenu()" class="flex items-center px-4 py-3 rounded-xl hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">Home</a>
+                <button onclick="togglePracticeSubmenu(event)" id="practiceToggle" aria-expanded="false" class="w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors text-left">
+                    <span>Practice Areas</span>
+                    <i id="practiceChevron" class="fa-solid fa-chevron-down text-xs text-gold-600 transition-transform duration-300"></i>
+                </button>
+                <div id="practiceSubmenu" class="max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                    <div class="ml-4 pl-2 py-1 mb-1 border-l-2 border-gold-500/40 space-y-0.5 text-[13.5px]">
+                        <a href="practice-criminal.html" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-navy-600 dark:text-navy-300 hover:bg-warm-100 dark:hover:bg-navy-800 hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Criminal Defense & Bail</a>
+                        <a href="practice-civil.html" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-navy-600 dark:text-navy-300 hover:bg-warm-100 dark:hover:bg-navy-800 hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Civil & Commercial Suits</a>
+                        <a href="practice-banking.html" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-navy-600 dark:text-navy-300 hover:bg-warm-100 dark:hover:bg-navy-800 hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Banking & Corporate Law</a>
+                        <a href="practice-family.html" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-navy-600 dark:text-navy-300 hover:bg-warm-100 dark:hover:bg-navy-800 hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Family & Custody Law</a>
+                        <a href="practice-property.html" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-navy-600 dark:text-navy-300 hover:bg-warm-100 dark:hover:bg-navy-800 hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Property & Succession</a>
+                        <a href="practice-cyber.html" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-navy-600 dark:text-navy-300 hover:bg-warm-100 dark:hover:bg-navy-800 hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Cyber Crime & PECA Law</a>
+                    </div>
+                </div>
+                <a href="about.html" onclick="closeMobileMenu()" class="flex items-center px-4 py-3 rounded-xl hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">The Firm</a>
+                <a href="clients.html" onclick="closeMobileMenu()" class="flex items-center px-4 py-3 rounded-xl hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">Retainers</a>
+                <a href="index.html#leadership" onclick="closeMobileMenu()" class="flex items-center px-4 py-3 rounded-xl hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">Advocates</a>
+                <a href="faq.html" onclick="closeMobileMenu()" class="flex items-center px-4 py-3 rounded-xl hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">FAQ</a>
+                <a href="blog.html" onclick="closeMobileMenu()" class="flex items-center px-4 py-3 rounded-xl hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">Blog</a>
+            </nav>
+            <div class="p-4 border-t border-navy-100 dark:border-navy-700/60 bg-warm-50 dark:bg-navy-800/50">
+                <div class="grid grid-cols-2 gap-2.5 mb-2.5">
+                    <a href="tel:+923112610683" class="flex items-center justify-center gap-2 bg-navy-900 text-gold-400 font-semibold text-[13px] py-3.5 rounded-xl active:scale-[0.98] transition-transform"><i class="fa-solid fa-phone text-xs"></i>Call Now</a>
+                    <a href="https://wa.me/923112610683?text=Assalam-o-Alaikum!%20I%20need%20legal%20consultation." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-emerald-600 text-white font-semibold text-[13px] py-3.5 rounded-xl active:scale-[0.98] transition-transform"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+                </div>
+                <a href="contact.html" onclick="closeMobileMenu()" class="flex items-center justify-center gap-2 border-2 border-gold-500 text-gold-800 dark:text-gold-400 font-bold text-[12px] uppercase tracking-[0.15em] py-3 rounded-xl active:scale-[0.98] transition-transform">Book Consultation</a>
+            </div>
+        </aside>
 
     <!-- PAGE HERO -->
     <section class="bg-navy-900 text-white py-14 sm:py-20 px-4 border-b border-navy-800 relative grain">
@@ -417,28 +440,33 @@
             }
         }
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const icon = document.getElementById('mobileMenuIcon');
-            const btn = document.getElementById('mobileMenuBtn');
-            if (menu.classList.contains('open')) {
-                menu.classList.remove('open');
-                icon.className = 'fa-solid fa-bars text-xl';
-                btn.setAttribute('aria-expanded', 'false');
-            } else {
-                menu.classList.add('open');
-                icon.className = 'fa-solid fa-xmark text-xl';
-                btn.setAttribute('aria-expanded', 'true');
+        function toggleMobileMenu(force) {
+            var menu = document.getElementById('mobileMenu');
+            var backdrop = document.getElementById('mobileBackdrop');
+            var willOpen = (typeof force === 'boolean') ? force : menu.classList.contains('translate-x-full');
+            menu.classList.toggle('translate-x-full', !willOpen);
+            menu.setAttribute('aria-hidden', String(!willOpen));
+            if (backdrop) {
+                backdrop.classList.toggle('opacity-0', !willOpen);
+                backdrop.classList.toggle('pointer-events-none', !willOpen);
             }
+            document.body.style.overflow = willOpen ? 'hidden' : '';
+            var btn = document.getElementById('mobileMenuBtn');
+            if (btn) btn.setAttribute('aria-expanded', String(willOpen));
         }
-        function closeMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const icon = document.getElementById('mobileMenuIcon');
-            const btn = document.getElementById('mobileMenuBtn');
-            menu.classList.remove('open');
-            icon.className = 'fa-solid fa-bars text-xl';
-            btn.setAttribute('aria-expanded', 'false');
+        function closeMobileMenu() { toggleMobileMenu(false); }
+        function togglePracticeSubmenu(e) {
+            if (e) e.preventDefault();
+            var sub = document.getElementById('practiceSubmenu');
+            var chev = document.getElementById('practiceChevron');
+            var tgl = document.getElementById('practiceToggle');
+            var open = sub.classList.contains('max-h-0');
+            sub.classList.toggle('max-h-0', !open);
+            sub.classList.toggle('max-h-[520px]', open);
+            if (chev) chev.classList.toggle('rotate-180', open);
+            if (tgl) tgl.setAttribute('aria-expanded', String(open));
         }
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileMenu(); });
 
         function toggleFaq(el) {
             const item = el.closest('.faq-item');
