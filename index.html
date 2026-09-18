@@ -48,6 +48,17 @@
     <!-- Tailwind CSS with Corporate Palette -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        /* Apply saved theme before first paint (no light-flash on load) */
+        (function () {
+            try {
+                var t = localStorage.getItem('klh-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -146,7 +157,7 @@
             <a href="https://wa.me/923112610683" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center font-medium">
                 <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
             </a>
-            <button onclick="toggleDarkMode()" class="ml-0.5 p-1 rounded text-navy-400 hover:text-gold-400 transition-colors" title="Toggle Theme">
+            <button onclick="toggleTheme()" class="ml-0.5 p-1 rounded text-navy-400 hover:text-gold-400 transition-colors" title="Toggle Theme">
                 <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
             </button>
         </div>
@@ -1069,17 +1080,20 @@
 
         function closeLawyerModal() { document.getElementById('lawyerModal').classList.add('hidden'); }
 
-        function toggleDarkMode() {
-            isDarkMode = !isDarkMode;
-            const icon = document.getElementById('themeIcon');
-            if (isDarkMode) {
-                document.documentElement.classList.add('dark');
-                icon.className = "fa-solid fa-sun text-gold-400";
-            } else {
-                document.documentElement.classList.remove('dark');
-                icon.className = "fa-solid fa-moon text-gold-300";
-            }
+        function setTheme(dark) {
+            document.documentElement.classList.toggle('dark', dark);
+            try { localStorage.setItem('klh-theme', dark ? 'dark' : 'light'); } catch (e) {}
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.className = dark ? 'fa-solid fa-sun text-gold-400' : 'fa-solid fa-moon text-gold-300';
         }
+        function toggleTheme() {
+            setTheme(!document.documentElement.classList.contains('dark'));
+        }
+        (function syncThemeIcon() {
+            var dark = document.documentElement.classList.contains('dark');
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.className = dark ? 'fa-solid fa-sun text-gold-400' : 'fa-solid fa-moon text-gold-300';
+        })();
 
         function toggleTickerPause() {
             const t = document.getElementById('tickerContainer');
