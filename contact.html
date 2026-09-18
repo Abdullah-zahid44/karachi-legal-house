@@ -290,45 +290,29 @@
             const honeypot = document.getElementById('_security_trap').value;
             if (honeypot) return;
 
-            if (isRateLimited) {
-                alert(`Security Lockout: Too many submissions. Please wait ${cooldownTime} seconds.`);
-                return;
-            }
+            const name = document.getElementById('formFullName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const areaEl = document.getElementById('formPracticeArea');
+            const area = areaEl ? areaEl.value : 'General Inquiry';
+            const message = document.getElementById('formMessage').value.trim();
 
-            if (rateLimitCount >= 2) {
-                isRateLimited = true;
-                cooldownTime = 60;
-                startCooldownTimer();
-            }
-
-            const fullName = document.getElementById('formFullName').value;
-            const phone = document.getElementById('formPhone').value;
-            const message = document.getElementById('formMessage').value;
-
-            const cleanName = sanitizeInput(fullName);
-            const cleanPhone = sanitizeInput(phone);
-            const cleanMsg = sanitizeInput(message);
-
-            const alertBox = document.getElementById('formAlertContainer');
-            const alertText = document.getElementById('formAlertText');
-
-            if (cleanName.wasSanitized || cleanPhone.wasSanitized || cleanMsg.wasSanitized) {
-                alertBox.classList.remove('hidden');
-                alertText.innerText = "Malicious XSS script payload tags were detected and neutralized!";
-            } else {
-                alertBox.classList.add('hidden');
-            }
-
-            rateLimitCount++;
-            document.getElementById('rateQuotaDisplay').innerText = `${3 - rateLimitCount}/3`;
+            const waText = encodeURIComponent(
+                'New Consultation Request — Karachi Legal House\n' +
+                '--------------------------------\n' +
+                'Name: ' + name + '\n' +
+                'Phone: ' + phone + '\n' +
+                'Practice Area: ' + area + '\n' +
+                'Message: ' + (message || '—')
+            );
+            window.open('https://wa.me/923112610683?text=' + waText, '_blank');
 
             const formContainer = document.getElementById('consultationFormContainer');
             formContainer.innerHTML = `
                 <div class="text-center py-10 space-y-4">
                     <div class="w-16 h-16 rounded-full bg-emerald-500 text-white text-2xl flex items-center justify-center mx-auto shadow-shield-glow"><i class="fa-solid fa-check"></i></div>
-                    <h4 class="font-serif text-2xl font-bold text-navy-800 dark:text-white">Consultation Request Dispatched!</h4>
-                    <p class="text-xs font-mono text-slate-500 dark:text-slate-400">Session Token: <code class="text-gold-500 font-bold">${csrfToken.substring(0, 12)}...</code></p>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 max-w-sm mx-auto">Our Senior Partner Advocate will review your query and respond within 2 hours.</p>
+                    <h4 class="font-serif text-2xl font-bold text-navy-800 dark:text-white">Consultation Request Ready</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 max-w-sm mx-auto">We have opened WhatsApp with your case details — just press <strong>Send</strong> there and our Senior Partner Advocate will respond within 2 hours.</p>
+                    <a href="https://wa.me/923112610683?text=${waText}" target="_blank" class="inline-block mt-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold px-6 py-3 rounded-lg transition">Re-open WhatsApp</a>
                 </div>
             `;
         }
