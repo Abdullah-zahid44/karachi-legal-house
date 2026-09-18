@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://karachilegalhouse.com/sitemap.xml
+
+# Karachi Legal House - Advocates & Legal Consultants
+# Sindh Bar Council Reg: 663/BC

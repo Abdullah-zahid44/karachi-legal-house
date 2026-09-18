@@ -1,0 +1,1 @@
+fetch('https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&piprop=original&titles=Sindh_High_Court').then(r => r.json()).then(d => { const pages = d.query.pages; const pageId = Object.keys(pages)[0]; console.log(pages[pageId].original.source); }).catch(e => console.log(e));
