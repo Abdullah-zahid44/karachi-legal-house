@@ -52,7 +52,7 @@
         (function () {
             try {
                 var t = localStorage.getItem('klh-theme');
-                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                if (t === 'dark') {
                     document.documentElement.classList.add('dark');
                 }
             } catch (e) {}
