@@ -650,6 +650,7 @@
                 id: 1, 
                 name: "Amreli Steels Limited", 
                 shortName: "Amreli Steels",
+                logo: "/public/logos/amreli.png",
                 cat: "Heavy Industry & PSX Listed", 
                 badge: "Lead Counsel Mandate", 
                 badgeColor: "bg-red-700 text-white",
@@ -660,6 +661,7 @@
                 id: 2, 
                 name: "AsaanPay", 
                 shortName: "AsaanPay",
+                logo: "/public/logos/asaanpay.png",
                 cat: "FinTech & Payment Gateway", 
                 badge: "Lead Corporate Counsel", 
                 badgeColor: "bg-[#0d1b2a] text-[#00b4d8]",
@@ -670,6 +672,7 @@
                 id: 3, 
                 name: "DevTects (Pvt) Ltd", 
                 shortName: "DevTects",
+                logo: "/public/logos/devtects.png",
                 cat: "Technology & Software", 
                 badge: "Technology Retainer", 
                 badgeColor: "bg-[#1e1b4b] text-[#818cf8]",
@@ -680,6 +683,7 @@
                 id: 4, 
                 name: "JS Bank Limited", 
                 shortName: "JS Bank",
+                logo: "/public/logos/jsbank.png",
                 cat: "Commercial Banking", 
                 badge: "Panel Litigation Counsel", 
                 badgeColor: "bg-[#0b2f6d] text-[#f58220]",
@@ -690,6 +694,8 @@
                 id: 5, 
                 name: "BankIslami Pakistan Limited", 
                 shortName: "BankIslami",
+                logo: "/public/logos/bankislami.png",
+                logoBg: "#055b38",
                 cat: "Islamic Financial Institution", 
                 badge: "Banking Panel Counsel", 
                 badgeColor: "bg-[#055b38] text-white",
@@ -700,6 +706,7 @@
                 id: 6, 
                 name: "Halan Microfinance Bank Limited", 
                 shortName: "Halan Bank",
+                logo: "/public/logos/halan.png",
                 cat: "Microfinance & Banking", 
                 badge: "Banking Retainer Counsel", 
                 badgeColor: "bg-black text-[#00e599]",
@@ -710,6 +717,7 @@
                 id: 7, 
                 name: "Pakistan Rangers (Sindh)", 
                 shortName: "Pakistan Rangers",
+                logo: "/public/logos/rangers.png",
                 cat: "Public Sector & State Defense", 
                 badge: "Special Legal Counsel", 
                 badgeColor: "bg-[#14532d] text-[#facc15]",
@@ -720,6 +728,7 @@
                 id: 8, 
                 name: "PTCL", 
                 shortName: "PTCL",
+                logo: "/public/logos/ptcl.png",
                 cat: "Telecommunications", 
                 badge: "Retainer Panel Counsel", 
                 badgeColor: "bg-[#15803d] text-white",
@@ -730,6 +739,7 @@
                 id: 9, 
                 name: "STEVTA Sindh", 
                 shortName: "STEVTA Sindh",
+                logo: "/public/logos/stevta.png",
                 cat: "Government Authority", 
                 badge: "Government Legal Advisor", 
                 badgeColor: "bg-[#064e3b] text-[#a7f3d0]",
@@ -740,6 +750,7 @@
                 id: 10, 
                 name: "Pathfinder Group & Wackenhut", 
                 shortName: "Pathfinder Group",
+                logo: "/public/logos/pathfinder.png",
                 cat: "Security & Industrial Conglomerate", 
                 badge: "Retainer Legal Counsel", 
                 badgeColor: "bg-[#881337] text-white",
@@ -820,8 +831,8 @@
             if (gridContainer) {
                 gridContainer.innerHTML = CLIENT_PORTFOLIO.map(c => `
                     <div class="bg-white dark:bg-navy-900 p-4 rounded-xl border border-slate-200 dark:border-navy-800 flex flex-col items-center justify-center space-y-2 hover:border-gold-500 transition-all duration-300 shadow-sm">
-                        <div class="${c.badgeColor} px-3 py-1.5 rounded text-xs font-bold font-mono tracking-wider shadow-sm text-center">
-                            ${c.shortName}
+                        <div class="h-14 sm:h-16 flex items-center justify-center w-full rounded-lg px-2" ${c.logoBg ? `style="background:${c.logoBg}"` : ""}>
+                            <img src="${c.logo}" alt="${c.name} logo" loading="lazy" class="max-h-full w-auto max-w-full object-contain" />
                         </div>
                         <span class="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase text-center">${c.shortName}</span>
                     </div>
@@ -830,8 +841,8 @@
 
             if (tickerContainer) {
                 const tickerItems = CLIENT_PORTFOLIO.map(c => `
-                    <div class="bg-white dark:bg-navy-900 px-5 py-2 rounded-xl border border-slate-200 dark:border-navy-700 shadow-sm flex items-center justify-center h-16 w-44 flex-shrink-0">
-                        <span class="${c.badgeColor} px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wider">${c.shortName}</span>
+                    <div class="bg-white dark:bg-navy-900 px-4 py-2 rounded-xl border border-slate-200 dark:border-navy-700 shadow-sm flex items-center justify-center h-16 w-44 flex-shrink-0" ${c.logoBg ? `style="background:${c.logoBg}"` : ""}>
+                        <img src="${c.logo}" alt="${c.name} logo" loading="lazy" class="max-h-10 w-auto max-w-full object-contain" />
                     </div>
                 `).join('');
                 tickerContainer.innerHTML = tickerItems + tickerItems;
@@ -890,9 +901,9 @@
             container.innerHTML = CLIENT_PORTFOLIO.map((c, index) => `
                 <div class="bg-white dark:bg-navy-900 rounded-xl border border-slate-200 dark:border-navy-700/60 hover:border-gold-500/60 transition-all duration-300 shadow-soft hover:shadow-premium flex flex-col justify-between overflow-hidden group reveal" style="transition-delay: ${index * 60}ms">
                     
-                    <div class="bg-slate-50 dark:bg-navy-800/80 border-b border-slate-100 dark:border-navy-700/60 px-5 py-3.5 flex items-center justify-between h-20">
-                        <div class="${c.badgeColor} px-3.5 py-1.5 rounded-md font-bold text-xs tracking-wider shadow-sm font-mono">
-                            ${c.shortName}
+                    <div class="bg-slate-50 dark:bg-navy-800/80 border-b border-slate-100 dark:border-navy-700/60 px-5 py-3 flex items-center justify-between h-20 gap-3">
+                        <div class="h-12 flex items-center rounded-md px-2 flex-shrink-0" ${c.logoBg ? `style="background:${c.logoBg}"` : ""}>
+                            <img src="${c.logo}" alt="${c.name} logo" loading="lazy" class="max-h-full w-auto max-w-[9rem] object-contain" />
                         </div>
                         <span class="bg-navy-900 text-gold-400 text-[10px] font-bold font-mono px-2.5 py-1 rounded shadow border border-gold-500/25 whitespace-nowrap">
                             ${c.badge}
