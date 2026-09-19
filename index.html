@@ -99,8 +99,13 @@
             display: flex; width: max-content;
             animation: logoMarquee 35s linear infinite;
         }
-        .animate-logo-marquee:hover { animation-play-state: paused; }
         .animate-logo-marquee.ticker-paused { animation-play-state: paused; }
+        /* Pause is controlled only by explicit toggle (button / click on ticker).
+           No :hover pause: on touch devices hover gets "stuck" and fights the button state. */
+
+        /* Horizontal chip scroller (practice filters): no visible scrollbar */
+        .klh-no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+        .klh-no-scrollbar::-webkit-scrollbar { display: none; }
 
         .reveal { opacity: 1; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -272,7 +277,7 @@
         </aside>
 
     <!-- HERO SECTION (CLEAN SINGLE CREDENTIALS BOX) -->
-    <section id="home" class="relative min-h-[90vh] flex items-center py-14 sm:py-24 px-4 overflow-hidden bg-navy-900 text-white">
+    <section id="home" class="relative min-h-[70vh] lg:min-h-[76vh] flex items-center py-10 sm:py-16 lg:py-20 px-4 overflow-hidden bg-navy-900 text-white">
         <div class="absolute inset-0 z-0">
             <img src="/high-court.jpg" alt="High Court of Sindh building in Karachi, Pakistan" class="w-full h-full object-cover object-center" fetchpriority="high">
             <div class="absolute inset-0 bg-gradient-to-r from-navy-900/75 via-navy-900/50 to-navy-900/35"></div>
@@ -359,11 +364,11 @@
                 <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-warm-100 dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
                 <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-warm-100 dark:from-navy-800 to-transparent z-10 pointer-events-none"></div>
 
-                <div class="animate-logo-marquee flex items-center hover:[animation-play-state:paused]" id="tickerContainer">
+                <div class="animate-logo-marquee flex items-center cursor-pointer" id="tickerContainer" onclick="toggleTickerPause()" title="Click to pause / resume" role="button" aria-label="Pause or resume partner logo ticker" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTickerPause();}">
                 </div>
             </div>
             <div class="flex justify-end mt-2 pr-1">
-                <button id="tickerPauseBtn" onclick="toggleTickerPause()" class="text-[11px] font-medium tracking-[0.25em] uppercase text-navy-600 dark:text-navy-300 hover:text-navy-800 dark:hover:text-gold-400 transition-colors">
+                <button id="tickerPauseBtn" onclick="toggleTickerPause()" aria-pressed="false" class="text-[11px] font-medium tracking-[0.25em] uppercase text-navy-600 dark:text-navy-300 hover:text-navy-800 dark:hover:text-gold-400 transition-colors">
                     Pause
                 </button>
             </div>
@@ -437,15 +442,15 @@
                 <p class="text-slate-500 dark:text-navy-300 max-w-xl mx-auto text-sm">Comprehensive legal representation governed by statutory law and judicial precedents.</p>
             </div>
 
-            <!-- Filter Tabs -->
-            <div class="flex flex-wrap justify-center gap-2 mb-8" id="practiceTabs">
-                <button onclick="filterPractices('all')" class="practice-tab-btn active px-4 py-2 rounded text-xs font-medium bg-navy-900 text-white transition-all">All</button>
-                <button onclick="filterPractices('criminal')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Criminal</button>
-                <button onclick="filterPractices('civil')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Civil</button>
-                <button onclick="filterPractices('corporate')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Banking / Corporate</button>
-                <button onclick="filterPractices('family')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Family</button>
-                <button onclick="filterPractices('property')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Property</button>
-                <button onclick="filterPractices('cyber')" class="practice-tab-btn px-4 py-2 rounded text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Cyber PECA</button>
+            <!-- Filter Tabs: horizontal chip scroller on mobile, centered wrap on desktop -->
+            <div class="flex flex-nowrap sm:flex-wrap sm:justify-center gap-2 mb-8 overflow-x-auto sm:overflow-visible klh-no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-1" id="practiceTabs" role="tablist" aria-label="Filter practice areas">
+                <button onclick="filterPractices('all', this)" data-cat="all" role="tab" aria-selected="true" class="practice-tab-btn flex-shrink-0 px-4 py-2 rounded-full text-xs font-semibold bg-navy-900 dark:bg-gold-500 text-white dark:text-navy-900 border border-navy-900 dark:border-gold-500 shadow-sm transition-all">All</button>
+                <button onclick="filterPractices('criminal', this)" data-cat="criminal" role="tab" aria-selected="false" class="practice-tab-btn flex-shrink-0 px-4 py-2 rounded-full text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Criminal</button>
+                <button onclick="filterPractices('civil', this)" data-cat="civil" role="tab" aria-selected="false" class="practice-tab-btn flex-shrink-0 px-4 py-2 rounded-full text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Civil</button>
+                <button onclick="filterPractices('corporate', this)" data-cat="corporate" role="tab" aria-selected="false" class="practice-tab-btn flex-shrink-0 px-4 py-2 rounded-full text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Banking / Corporate</button>
+                <button onclick="filterPractices('family', this)" data-cat="family" role="tab" aria-selected="false" class="practice-tab-btn flex-shrink-0 px-4 py-2 rounded-full text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Family</button>
+                <button onclick="filterPractices('property', this)" data-cat="property" role="tab" aria-selected="false" class="practice-tab-btn flex-shrink-0 px-4 py-2 rounded-full text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Property</button>
+                <button onclick="filterPractices('cyber', this)" data-cat="cyber" role="tab" aria-selected="false" class="practice-tab-btn flex-shrink-0 px-4 py-2 rounded-full text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all">Cyber PECA</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="practiceAreasGrid">
@@ -552,32 +557,36 @@
                         </div>
 
                         <div id="consultationFormContainer">
-                            <form onsubmit="handleConsultationSubmit(event)" class="space-y-4">
+                            <form onsubmit="handleConsultationSubmit(event)" novalidate class="space-y-4" id="consultationForm">
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
-                                        Full Name (پورا نام):
+                                    <label for="formFullName" class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
+                                        Full Name (پورا نام): <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <input 
                                         type="text" 
                                         id="formFullName"
                                         required
                                         placeholder="Enter your full name"
+                                        oninput="clearFieldError('formFullName')"
                                         class="w-full bg-navy-50 dark:bg-navy-800 border border-navy-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-base text-navy-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none"
                                     />
+                                    <p id="err-formFullName" class="hidden text-xs text-red-500 mt-1.5 font-medium"></p>
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
-                                            Contact Phone (رابطہ نمبر):
+                                        <label for="formPhone" class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
+                                            Contact Phone (رابطہ نمبر): <span class="text-red-500" aria-hidden="true">*</span>
                                         </label>
                                         <input 
                                             type="tel" 
                                             id="formPhone"
                                             required
                                             placeholder="+92 3XX XXXXXXX"
+                                            oninput="clearFieldError('formPhone')"
                                             class="w-full bg-navy-50 dark:bg-navy-800 border border-navy-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-base text-navy-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none"
                                         />
+                                        <p id="err-formPhone" class="hidden text-xs text-red-500 mt-1.5 font-medium"></p>
                                     </div>
                                     <div>
                                         <label class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
@@ -599,16 +608,18 @@
                                 </div>
 
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
-                                        Legal Matter Summary (کیس کی مختصر تفصیل):
+                                    <label for="formMessage" class="block text-xs font-bold uppercase tracking-wider text-navy-700 dark:text-navy-300 mb-1.5">
+                                        Legal Matter Summary (کیس کی مختصر تفصیل): <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <textarea 
                                         id="formMessage"
                                         rows="4"
                                         required
                                         placeholder="Provide brief details regarding your case, stay order, court appearance, or legal inquiry..."
+                                        oninput="clearFieldError('formMessage')"
                                         class="w-full bg-navy-50 dark:bg-navy-800 border border-navy-300 dark:border-navy-700 rounded-lg px-4 py-2.5 text-base text-navy-800 dark:text-white focus:ring-2 focus:ring-gold-500 outline-none resize-none"
                                     ></textarea>
+                                    <p id="err-formMessage" class="hidden text-xs text-red-500 mt-1.5 font-medium"></p>
                                 </div>
 
                                 <div class="bg-navy-50 dark:bg-navy-800/80 p-3.5 rounded-lg border border-navy-200 dark:border-navy-700 space-y-1">
@@ -705,7 +716,7 @@
 
     <!-- ADVOCATE PROFILE MODAL -->
     <div id="lawyerModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-navy-900/80 backdrop-blur-sm">
-        <div class="bg-white dark:bg-navy-900 rounded-xl shadow-premium max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gold-500/40 relative p-6 sm:p-8">
+        <div id="lawyerModalBody" class="bg-white dark:bg-navy-900 rounded-xl shadow-premium max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gold-500/40 relative p-6 sm:p-8">
             <button onclick="closeLawyerModal()" class="absolute top-4 right-4 text-navy-400 hover:text-navy-900 dark:hover:text-white p-2 rounded-full transition-colors">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
@@ -762,6 +773,7 @@
                 name: "Amreli Steels Limited", 
                 shortName: "Amreli Steels",
                 logo: "/logos/amreli.png",
+                darkBadge: true,
                 cat: "Heavy Industry & PSX Listed", 
                 badge: "Lead Counsel Mandate", 
                 badgeColor: "bg-navy-800 text-gold-400",
@@ -795,6 +807,7 @@
                 name: "JS Bank Limited", 
                 shortName: "JS Bank",
                 logo: "/logos/jsbank.png",
+                darkBadge: true,
                 cat: "Commercial Banking", 
                 badge: "Panel Litigation Counsel", 
                 badgeColor: "bg-navy-800 text-gold-400",
@@ -817,6 +830,7 @@
                 name: "Halan Microfinance Bank Limited", 
                 shortName: "Halan Bank",
                 logo: "/logos/halan.png",
+                darkBadge: true,
                 cat: "Microfinance & Banking", 
                 badge: "Banking Retainer Counsel", 
                 badgeColor: "bg-navy-800 text-gold-400",
@@ -861,6 +875,7 @@
                 name: "Pathfinder Group & Wackenhut", 
                 shortName: "Pathfinder Group",
                 logo: "/logos/pathfinder.png",
+                darkBadge: true,
                 cat: "Security & Industrial Conglomerate", 
                 badge: "Retainer Legal Counsel", 
                 badgeColor: "bg-navy-800 text-gold-400",
@@ -950,13 +965,23 @@
             }
         }
 
-        function filterPractices(category) {
+        // Practice filter tab styles: identical geometry in both states, so the
+        // buttons never change size/shape on first click.
+        const PRACTICE_TAB_IDLE = "practice-tab-btn flex-shrink-0 px-4 py-2 rounded-full text-xs font-medium bg-white dark:bg-navy-800 text-navy-600 dark:text-navy-300 border border-navy-200 dark:border-navy-700 hover:border-gold-500/50 transition-all";
+        const PRACTICE_TAB_ACTIVE = "practice-tab-btn flex-shrink-0 px-4 py-2 rounded-full text-xs font-semibold bg-navy-900 dark:bg-gold-500 text-white dark:text-navy-900 border border-navy-900 dark:border-gold-500 shadow-sm transition-all";
+
+        function filterPractices(category, btn) {
             activePracticeCategory = category;
             const buttons = document.querySelectorAll('.practice-tab-btn');
-            buttons.forEach(btn => {
-                btn.className = "practice-tab-btn px-4 py-2 rounded-full bg-white dark:bg-navy-800 text-navy-700 dark:text-navy-200 border border-navy-200 dark:border-navy-700 hover:border-gold-500 transition-all";
+            buttons.forEach(b => {
+                b.className = PRACTICE_TAB_IDLE;
+                b.setAttribute('aria-selected', 'false');
             });
-            event.target.className = "practice-tab-btn active px-4 py-2 rounded-full bg-gold-500 text-navy-900 font-bold shadow-sm transition-all";
+            const target = btn || document.querySelector('.practice-tab-btn[data-cat="' + category + '"]');
+            if (target) {
+                target.className = PRACTICE_TAB_ACTIVE;
+                target.setAttribute('aria-selected', 'true');
+            }
             renderPracticeAreas(category);
         }
 
@@ -1009,7 +1034,7 @@
                     
                     <div class="bg-navy-50 dark:bg-navy-800/80 border-b border-navy-100 dark:border-navy-700/60 px-5 py-3 flex items-center justify-between h-20 gap-4">
                         <div class="h-12 flex-1 min-w-0 flex items-center rounded-md" ${c.logoBg ? `style="background:${c.logoBg}"` : ""}>
-                            <img src="${c.logo}" alt="${c.name} logo" loading="lazy" class="max-h-12 w-auto max-w-full object-contain" />
+                            <img src="${c.logo}" alt="${c.name} logo" loading="lazy" class="max-h-12 w-auto max-w-full object-contain ${c.darkBadge ? 'dark:bg-slate-100 dark:rounded-lg dark:px-3 dark:py-1' : ''}" />
                         </div>
                         <span class="bg-navy-900 text-gold-400 text-[10px] font-bold font-mono px-2.5 py-1 rounded shadow border border-gold-500/25 text-center leading-snug max-w-[38%] flex-shrink-0 break-words">
                             ${c.badge}
@@ -1056,8 +1081,41 @@
             }).join('');
         }
 
+        // ---- Consultation form validation (index page) ----
+        function setFieldError(id, msg) {
+            const input = document.getElementById(id);
+            const err = document.getElementById('err-' + id);
+            if (err) { err.textContent = msg; err.classList.remove('hidden'); }
+            if (input) input.classList.add('border-red-500', 'ring-1', 'ring-red-500');
+        }
+        function clearFieldError(id) {
+            const input = document.getElementById(id);
+            const err = document.getElementById('err-' + id);
+            if (err) { err.textContent = ''; err.classList.add('hidden'); }
+            if (input) input.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
+        }
+        function validateConsultationForm() {
+            let ok = true;
+            const name = document.getElementById('formFullName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const msg = document.getElementById('formMessage').value.trim();
+            const digits = phone.replace(/\D/g, '');
+            if (!name) { setFieldError('formFullName', 'Please enter your full name.'); ok = false; }
+            if (!phone) { setFieldError('formPhone', 'Please enter your contact phone number.'); ok = false; }
+            else if (digits.length < 7) { setFieldError('formPhone', 'Please enter a valid phone number (at least 7 digits).'); ok = false; }
+            if (!msg) { setFieldError('formMessage', 'Please briefly describe your legal matter.'); ok = false; }
+            else if (msg.length < 10) { setFieldError('formMessage', 'Please provide a little more detail (at least 10 characters).'); ok = false; }
+            return ok;
+        }
+
         function handleConsultationSubmit(e) {
             e.preventDefault();
+            ['formFullName', 'formPhone', 'formMessage'].forEach(clearFieldError);
+            if (!validateConsultationForm()) {
+                const firstInput = document.querySelector('#consultationForm input.border-red-500, #consultationForm textarea.border-red-500');
+                if (firstInput) { firstInput.scrollIntoView({ behavior: 'smooth', block: 'center' }); firstInput.focus({ preventScroll: true }); }
+                return;
+            }
             const name = document.getElementById('formFullName').value.trim();
             const phone = document.getElementById('formPhone').value.trim();
             const areaEl = document.getElementById('formPracticeArea');
@@ -1108,6 +1166,8 @@
             `).join('');
 
             document.getElementById('lawyerModal').classList.remove('hidden');
+            // Always start at the top — the scrollable body keeps its position otherwise.
+            document.getElementById('lawyerModalBody').scrollTop = 0;
         }
 
         function closeLawyerModal() { document.getElementById('lawyerModal').classList.add('hidden'); }
@@ -1133,6 +1193,8 @@
             if (!t || !b) return;
             const paused = t.classList.toggle('ticker-paused');
             b.textContent = paused ? 'Play' : 'Pause';
+            b.setAttribute('aria-pressed', String(paused));
+            t.setAttribute('aria-label', paused ? 'Resume partner logo ticker' : 'Pause partner logo ticker');
         }
 
         function toggleMobileMenu(force) {

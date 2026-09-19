@@ -281,31 +281,35 @@
                         </div>
 
                         <div id="consultationFormContainer">
-                            <form onsubmit="handleConsultationSubmit(event)" class="space-y-5">
+                            <form onsubmit="handleConsultationSubmit(event)" novalidate class="space-y-5" id="consultationForm">
                                 <!-- Honeypot Bot Trap -->
                                 <input type="text" id="_security_trap" style="display:none;" tabindex="-1" autocomplete="off" />
 
                                 <div>
-                                    <label class="block text-[11px] font-bold uppercase tracking-[0.15em] text-navy-800 dark:text-slate-300 mb-2">Full Name (نام):</label>
+                                    <label for="formFullName" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-navy-800 dark:text-slate-300 mb-2">Full Name (نام): <span class="text-red-500" aria-hidden="true">*</span></label>
                                     <input 
                                         type="text" 
                                         id="formFullName"
                                         required
                                         placeholder="Advocate / Client Full Name"
+                                        oninput="clearFieldError('formFullName')"
                                         class="w-full bg-slate-50 dark:bg-navy-900 border border-slate-200 dark:border-navy-700 rounded-lg px-4 py-3 text-[13px] text-slate-800 dark:text-white focus:ring-1 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all"
                                     />
+                                    <p id="err-formFullName" class="hidden text-xs text-red-500 mt-1.5 font-medium"></p>
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div>
-                                        <label class="block text-[11px] font-bold uppercase tracking-[0.15em] text-navy-800 dark:text-slate-300 mb-2">Contact Phone (فون نمبر):</label>
+                                        <label for="formPhone" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-navy-800 dark:text-slate-300 mb-2">Contact Phone (فون نمبر): <span class="text-red-500" aria-hidden="true">*</span></label>
                                         <input 
                                             type="tel" 
                                             id="formPhone"
                                             required
                                             placeholder="+92 3XX XXXXXXX"
+                                            oninput="clearFieldError('formPhone')"
                                             class="w-full bg-slate-50 dark:bg-navy-900 border border-slate-200 dark:border-navy-700 rounded-lg px-4 py-3 text-[13px] text-slate-800 dark:text-white focus:ring-1 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all"
                                         />
+                                        <p id="err-formPhone" class="hidden text-xs text-red-500 mt-1.5 font-medium"></p>
                                     </div>
                                     <div>
                                         <label class="block text-[11px] font-bold uppercase tracking-[0.15em] text-navy-800 dark:text-slate-300 mb-2">Practice Area:</label>
@@ -325,14 +329,16 @@
                                 </div>
 
                                 <div>
-                                    <label class="block text-[11px] font-bold uppercase tracking-[0.15em] text-navy-800 dark:text-slate-300 mb-2">Legal Matter Summary (مختصر تفصیل):</label>
+                                    <label for="formMessage" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-navy-800 dark:text-slate-300 mb-2">Legal Matter Summary (مختصر تفصیل): <span class="text-red-500" aria-hidden="true">*</span></label>
                                     <textarea 
                                         id="formMessage"
                                         rows="4"
                                         required
                                         placeholder="Provide brief details regarding Court Case, Stay Order, Bail, or Corporate Advisory..."
+                                        oninput="clearFieldError('formMessage')"
                                         class="w-full bg-slate-50 dark:bg-navy-900 border border-slate-200 dark:border-navy-700 rounded-lg px-4 py-3 text-[13px] text-slate-800 dark:text-white focus:ring-1 focus:ring-gold-500 focus:border-gold-500 outline-none resize-none transition-all"
                                     ></textarea>
+                                    <p id="err-formMessage" class="hidden text-xs text-red-500 mt-1.5 font-medium"></p>
                                 </div>
 
                                 <button 
@@ -432,11 +438,45 @@
             return { cleanValue: cleaned.trim(), wasSanitized: hasScript };
         }
 
+        // ---- Consultation form validation (contact page) ----
+        function setFieldError(id, msg) {
+            const input = document.getElementById(id);
+            const err = document.getElementById('err-' + id);
+            if (err) { err.textContent = msg; err.classList.remove('hidden'); }
+            if (input) input.classList.add('border-red-500', 'ring-1', 'ring-red-500');
+        }
+        function clearFieldError(id) {
+            const input = document.getElementById(id);
+            const err = document.getElementById('err-' + id);
+            if (err) { err.textContent = ''; err.classList.add('hidden'); }
+            if (input) input.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
+        }
+        function validateConsultationForm() {
+            let ok = true;
+            const name = document.getElementById('formFullName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const msg = document.getElementById('formMessage').value.trim();
+            const digits = phone.replace(/\D/g, '');
+            if (!name) { setFieldError('formFullName', 'Please enter your full name.'); ok = false; }
+            if (!phone) { setFieldError('formPhone', 'Please enter your contact phone number.'); ok = false; }
+            else if (digits.length < 7) { setFieldError('formPhone', 'Please enter a valid phone number (at least 7 digits).'); ok = false; }
+            if (!msg) { setFieldError('formMessage', 'Please briefly describe your legal matter.'); ok = false; }
+            else if (msg.length < 10) { setFieldError('formMessage', 'Please provide a little more detail (at least 10 characters).'); ok = false; }
+            return ok;
+        }
+
         function handleConsultationSubmit(e) {
             e.preventDefault();
 
             const honeypot = document.getElementById('_security_trap').value;
             if (honeypot) return;
+
+            ['formFullName', 'formPhone', 'formMessage'].forEach(clearFieldError);
+            if (!validateConsultationForm()) {
+                const firstInput = document.querySelector('#consultationForm input.border-red-500, #consultationForm textarea.border-red-500');
+                if (firstInput) { firstInput.scrollIntoView({ behavior: 'smooth', block: 'center' }); firstInput.focus({ preventScroll: true }); }
+                return;
+            }
 
             const name = document.getElementById('formFullName').value.trim();
             const phone = document.getElementById('formPhone').value.trim();
