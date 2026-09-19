@@ -497,7 +497,13 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5" id="clientPortfolioGrid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="clientPortfolioGrid">
+            </div>
+
+            <div class="text-center mt-10 reveal">
+                <a href="clients.html" class="inline-flex items-center gap-2.5 bg-navy-900 hover:bg-gold-500 text-gold-400 hover:text-navy-900 border border-gold-500/50 font-bold py-3.5 px-8 rounded-lg shadow-premium transition-all text-xs tracking-wider uppercase">
+                    View All Clients <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -1054,8 +1060,12 @@
         // RENDER 10 DISTINCT PORTFOLIO CARDS
         function renderClients() {
             const container = document.getElementById('clientPortfolioGrid');
-            container.innerHTML = CLIENT_PORTFOLIO.map((c, index) => `
-                <div class="bg-white dark:bg-navy-900 rounded-xl border border-navy-200 dark:border-navy-700/60 hover:border-gold-500/60 transition-all duration-300 shadow-soft hover:shadow-premium flex flex-col justify-between overflow-hidden group reveal" style="transition-delay: ${index * 60}ms">
+            // Homepage teaser: first 3 cards on mobile, first 6 (2 rows of 3) on desktop.
+            // Card 7+ stay hidden here — the full portfolio lives on clients.html.
+            container.innerHTML = CLIENT_PORTFOLIO.map((c, index) => {
+                const visClass = index < 3 ? '' : (index < 6 ? 'hidden lg:flex' : 'hidden');
+                return `
+                <div class="bg-white dark:bg-navy-900 rounded-xl border border-navy-200 dark:border-navy-700/60 hover:border-gold-500/60 transition-all duration-300 shadow-soft hover:shadow-premium flex flex-col justify-between overflow-hidden group reveal ${visClass}" style="transition-delay: ${index * 60}ms">
                     
                     <div class="bg-navy-50 dark:bg-navy-800/80 border-b border-navy-100 dark:border-navy-700/60 px-5 py-3 flex items-center justify-between h-20 gap-4">
                         <div class="h-12 flex-1 min-w-0 flex items-center rounded-md" ${c.logoBg ? `style="background:${c.logoBg}"` : ""}>
@@ -1077,7 +1087,7 @@
                         </div>
                     </div>
                 </div>
-            `).join('');
+            `; }).join('');
         }
 
         function renderAdvocates() {
