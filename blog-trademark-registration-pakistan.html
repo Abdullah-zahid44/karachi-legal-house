@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pakistan Trademark Registration Guide | Karachi Legal House</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23091520'/%3E%3Cpath d='M32 12v30M20 42h24M32 12L16 28M32 12L48 28' stroke='%23c5a880' stroke-width='3' stroke-linecap='round'/%3E%3Cellipse cx='20' cy='30' rx='8' ry='3' fill='%23c5a880'/%3E%3Cellipse cx='44' cy='30' rx='8' ry='3' fill='%23c5a880'/%3E%3Ctext x='32' y='56' font-family='serif' font-weight='800' font-size='10' fill='%23c5a880' text-anchor='middle'%3EKLH%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Trademark registration in Pakistan — IPO process, classes, fee, timeline &amp; oppositions explained. Protect your brand with Karachi lawyers. Call +92 311 2610683."">
+    <meta name="keywords" content="law firm Karachi, advocate Karachi, lawyer Karachi, criminal lawyer Karachi, bail lawyer Karachi, cyber crime lawyer Pakistan, PECA lawyer, NCCIA case, fake news case defense, family lawyer Karachi, khula lawyer, property lawyer Karachi, succession certificate NADRA, banking court lawyer Karachi, corporate lawyer Karachi, trademark registration Pakistan, consumer court Karachi, online fraud lawyer, best advocate Sindh High Court">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS (pre-compiled static build — no runtime CDN) -->
+    <link rel="stylesheet" href="/css/site.css">
     <script>
         /* Apply saved theme before first paint (no light-flash on load) */
         (function () {
@@ -26,31 +31,6 @@
                 }
             } catch (e) {}
         })();
-    </script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        navy: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#1e293b', 800: '#0f172a', 900: '#020617', 950: '#000000' },
-                        gold: { 50: '#fbf9f5', 100: '#f5f0e6', 200: '#eadecf', 300: '#dcc3b0', 400: '#cba389', 500: '#bfa97a', 600: '#a38d5f', 700: '#86724a', 800: '#6c5a3a', 900: '#584a32' },
-                        warm: { 50: '#faf9f8', 100: '#f5f3f0' }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Cormorant Garamond', 'serif'],
-                        urdu: ['Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'serif']
-                    },
-                    boxShadow: {
-                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-                        'premium': '0 10px 40px -10px rgba(0, 0, 0, 0.08)',
-                        'deep': '0 20px 40px -5px rgba(2, 6, 23, 0.3)',
-                        'gold-glow': '0 4px 20px -5px rgba(191, 169, 122, 0.3)'
-                    }
-                }
-            }
-        }
     </script>
     <style>
         @font-face {
@@ -77,19 +57,45 @@
         .faq-chevron { transition: transform 0.3s ease; }
         .article-body p { margin-bottom: 1.1rem; line-height: 1.85; }
         .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; margin: 2rem 0 0.9rem; }
+
+        /* ---- Premium motion: header scroll state, menu stagger, back-to-top ---- */
+        #siteHeader { transition: box-shadow .35s ease, background-color .35s ease; }
+        #siteHeader.scrolled { box-shadow: 0 10px 34px rgba(6,14,23,.16), 0 2px 8px rgba(6,14,23,.08); }
+        #siteHeader .header-inner { transition: padding .35s cubic-bezier(.22,1,.36,1); }
+        #siteHeader.scrolled .header-inner { padding-top: .6rem; padding-bottom: .6rem; }
+        #mobileMenuBtn .mline { display: block; width: 22px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .38s cubic-bezier(.22,1,.36,1), opacity .22s ease; }
+        #mobileMenuBtn .mline + .mline { margin-top: 5px; }
+        #mobileMenuBtn.open .mline:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        #mobileMenuBtn.open .mline:nth-child(2) { opacity: 0; transform: scaleX(.2); }
+        #mobileMenuBtn.open .mline:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        #mobileMenu nav > * { opacity: 0; transform: translateX(26px); transition: opacity .38s ease, transform .5s cubic-bezier(.22,1,.36,1); }
+        #mobileMenu.open nav > * { opacity: 1; transform: none; }
+        #mobileMenu.open nav > *:nth-child(1) { transition-delay: .08s; }
+        #mobileMenu.open nav > *:nth-child(2) { transition-delay: .13s; }
+        #mobileMenu.open nav > *:nth-child(3) { transition-delay: .18s; }
+        #mobileMenu.open nav > *:nth-child(4) { transition-delay: .23s; }
+        #mobileMenu.open nav > *:nth-child(5) { transition-delay: .28s; }
+        #mobileMenu.open nav > *:nth-child(6) { transition-delay: .33s; }
+        #mobileMenu.open nav > *:nth-child(7) { transition-delay: .38s; }
+        #mobileMenu.open nav > *:nth-child(8) { transition-delay: .43s; }
+        #mobileMenu .menu-foot { opacity: 0; transform: translateY(14px); transition: opacity .45s ease .45s, transform .5s cubic-bezier(.22,1,.36,1) .45s; }
+        #mobileMenu.open .menu-foot { opacity: 1; transform: none; }
+        #toTop { position: fixed; right: 1.1rem; bottom: 5.5rem; z-index: 55; width: 46px; height: 46px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; background: #060e17; color: #d4bc94; border: 1px solid rgba(191,169,122,.35); box-shadow: 0 10px 26px rgba(6,14,23,.35); opacity: 0; transform: translateY(16px); pointer-events: none; transition: opacity .35s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+        #toTop.show { opacity: 1; transform: none; pointer-events: auto; }
+        #toTop:active { transform: scale(.94); }
     </style>
 <link rel="canonical" href="https://karachilegalhouse.com/blog-trademark-registration-pakistan.html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://karachilegalhouse.com/blog-trademark-registration-pakistan.html">
 <meta property="og:title" content="Pakistan Trademark Registration Guide | Karachi Legal House">
 <meta property="og:description" content="Trademark registration in Pakistan — IPO process, classes, fee, timeline &amp; oppositions explained. Protect your brand with Karachi lawyers. Call +92 311 2610683.">
-<meta property="og:image" content="https://karachilegalhouse.com/favicon.jpg">
+<meta property="og:image" content="https://karachilegalhouse.com/og-image.png">
 <meta property="og:locale" content="en_PK">
 <meta property="og:site_name" content="Karachi Legal House">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pakistan Trademark Registration Guide | Karachi Legal House">
 <meta name="twitter:description" content="Trademark registration in Pakistan — IPO process, classes, fee, timeline &amp; oppositions explained. Protect your brand with Karachi lawyers. Call +92 311 2610683.">
-<meta name="twitter:image" content="https://karachilegalhouse.com/favicon.jpg">
+<meta name="twitter:image" content="https://karachilegalhouse.com/og-image.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -98,7 +104,7 @@
   "name": "Karachi Legal House",
   "url": "https://karachilegalhouse.com/",
   "telephone": "+92 311 2610683",
-  "email": "info.karachilegalhouse@gmail.com",
+  "email": "info@karachilegalhouse.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "DHA Phase 2",
@@ -144,17 +150,11 @@
     </div>
 
     <!-- MAIN NAVBAR -->
-    <header class="bg-white/95 dark:bg-navy-800/95 backdrop-blur-xl shadow-soft sticky top-[33px] z-40 border-b border-slate-100 dark:border-navy-700/60 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <header id="siteHeader" class="bg-white/95 dark:bg-navy-800/95 backdrop-blur-xl shadow-soft sticky top-[33px] z-40 border-b border-slate-100 dark:border-navy-700/60 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center header-inner">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <div class="relative w-11 h-11 flex-shrink-0 rounded-lg bg-navy-900 flex items-center justify-center border border-gold-600/30 group-hover:border-gold-500/60 transition-colors">
-                    <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none">
-                        <path d="M32 8v30M20 38h24M32 8L18 24M32 8L46 24" stroke="#bfa97a" stroke-width="2.5" stroke-linecap="round"/>
-                        <ellipse cx="22" cy="26" rx="6" ry="2.5" fill="#bfa97a"/>
-                        <ellipse cx="42" cy="26" rx="6" ry="2.5" fill="#bfa97a"/>
-                        <text x="32" y="54" font-family="serif" font-weight="700" font-size="10" fill="#bfa97a" text-anchor="middle">KLH</text>
-                    </svg>
-                </div>
+                <img src="/klh-mark-nav.png" alt="Karachi Legal House logo" width="40" height="40" class="w-10 h-10 dark:hidden">
+                <img src="/klh-mark-nav-light.png" alt="Karachi Legal House logo" width="40" height="40" class="w-10 h-10 hidden dark:block">
                 <div>
                     <p class="font-serif text-[22px] font-bold text-navy-800 dark:text-white leading-none">Karachi Legal House</p>
                     <span class="block text-[9px] font-semibold text-gold-800 dark:text-gold-500 uppercase tracking-[0.2em] mt-0.5">Advocates & Legal Consultants</span>
@@ -189,17 +189,17 @@
             </nav>
             
             <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden w-11 h-11 flex items-center justify-center -mr-2 text-navy-700 dark:text-navy-200 hover:bg-warm-100 dark:hover:bg-navy-800 rounded-full transition-colors" aria-label="Open menu" aria-expanded="false">
-                <i class="fa-solid fa-bars text-xl"></i>
+                <span aria-hidden="true" class="block"><span class="mline"></span><span class="mline"></span><span class="mline"></span></span>
             </button>
         </div>
 
         
     </header>
-    <div id="mobileBackdrop" onclick="closeMobileMenu()" class="fixed inset-0 bg-navy-950/60 backdrop-blur-[2px] z-[60] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden" aria-hidden="true"></div>
-        <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-[86vw] max-w-[340px] bg-white dark:bg-navy-900 z-[61] translate-x-full transition-transform duration-300 ease-out lg:hidden flex flex-col shadow-2xl border-l border-navy-100 dark:border-navy-700/60" aria-hidden="true" role="dialog" aria-label="Site menu">
+    <div id="mobileBackdrop" onclick="closeMobileMenu()" class="fixed inset-0 bg-navy-950/60 backdrop-blur-[2px] z-[60] opacity-0 pointer-events-none transition-opacity duration-500 lg:hidden" aria-hidden="true"></div>
+        <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-[86vw] max-w-[340px] bg-white dark:bg-navy-900 z-[61] translate-x-full transition-transform duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden flex flex-col shadow-2xl border-l border-navy-100 dark:border-navy-700/60" aria-hidden="true" role="dialog" aria-label="Site menu">
             <div class="flex items-center justify-between pl-5 pr-3 py-3 border-b border-navy-100 dark:border-navy-700/60">
                 <span class="flex items-center gap-2.5">
-                    <span class="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 font-serif font-bold text-sm">KLH</span>
+                    <img src="/klh-mark-nav.png" alt="Karachi Legal House logo" width="36" height="36" class="w-9 h-9 dark:hidden"><img src="/klh-mark-nav-light.png" alt="Karachi Legal House logo" width="36" height="36" class="w-9 h-9 hidden dark:block">
                     <span class="font-serif font-bold text-navy-800 dark:text-white text-[15px] leading-tight">Karachi Legal<br class="sm:hidden"> House</span>
                 </span>
                 <button onclick="closeMobileMenu()" aria-label="Close menu" class="w-11 h-11 flex items-center justify-center rounded-full text-navy-600 dark:text-navy-300 hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">
@@ -229,7 +229,7 @@
                 <a href="faq.html" onclick="closeMobileMenu()" class="flex items-center px-4 py-3 rounded-xl hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">FAQ</a>
                 <a href="blog.html" onclick="closeMobileMenu()" class="flex items-center px-4 py-3 rounded-xl hover:bg-warm-100 dark:hover:bg-navy-800 transition-colors">Blog</a>
             </nav>
-            <div class="p-4 border-t border-navy-100 dark:border-navy-700/60 bg-warm-50 dark:bg-navy-800/50">
+            <div class="menu-foot p-4 border-t border-navy-100 dark:border-navy-700/60 bg-warm-50 dark:bg-navy-800/50">
                 <div class="grid grid-cols-2 gap-2.5 mb-2.5">
                     <a href="tel:+923112610683" class="flex items-center justify-center gap-2 bg-navy-900 dark:bg-navy-700 text-gold-400 font-semibold text-[13px] py-3.5 rounded-xl active:scale-[0.98] transition-transform"><i class="fa-solid fa-phone text-xs"></i>Call Now</a>
                     <a href="https://wa.me/923112610683?text=Assalam-o-Alaikum!%20I%20need%20legal%20consultation." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-emerald-600 text-white font-semibold text-[13px] py-3.5 rounded-xl active:scale-[0.98] transition-transform"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
@@ -293,7 +293,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-xs">
                 <div class="col-span-2 md:col-span-1">
-                    <h4 class="text-white font-serif text-xl font-semibold mb-1">Karachi Legal House</h4>
+                    <div class="flex items-center gap-3 mb-1"><img src="/klh-mark-nav-light.png" alt="Karachi Legal House logo" width="40" height="40" class="w-10 h-10"><h4 class="text-white font-serif text-xl font-semibold">Karachi Legal House</h4></div>
                     <p class="text-gold-600 text-[10px] font-semibold uppercase tracking-[0.2em] mb-3">Advocates & Legal Consultants</p>
                     <p class="text-slate-500 leading-relaxed">Authorized to practice law throughout the Province of Sindh and superior courts of Pakistan. Sindh Bar Council Registration: 663/BC.</p>
                 </div>
@@ -325,7 +325,7 @@
                     <ul class="space-y-2.5 text-slate-500">
                         <li><a href="tel:+923112610683" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-phone mr-2 text-gold-600"></i>+92 311 2610683</a></li>
                         <li><a href="https://wa.me/923112610683" target="_blank" rel="noopener" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-whatsapp mr-2 text-gold-600"></i>WhatsApp</a></li>
-                        <li><a href="mailto:info.karachilegalhouse@gmail.com" class="hover:text-gold-400 transition-colors break-all"><i class="fa-solid fa-envelope mr-2 text-gold-600"></i>info.karachilegalhouse@gmail.com</a></li>
+                        <li><a href="mailto:info@karachilegalhouse.com" class="hover:text-gold-400 transition-colors break-all"><i class="fa-solid fa-envelope mr-2 text-gold-600"></i>info@karachilegalhouse.com</a></li>
                         <li><i class="fa-solid fa-location-dot mr-2 text-gold-600"></i>28C, Old Sunset Blvd, Phase 2, DHA, Karachi</li>
                     </ul>
                 </div>
@@ -358,6 +358,7 @@
             var backdrop = document.getElementById('mobileBackdrop');
             var willOpen = (typeof force === 'boolean') ? force : menu.classList.contains('translate-x-full');
             menu.classList.toggle('translate-x-full', !willOpen);
+            menu.classList.toggle('open', willOpen);
             menu.setAttribute('aria-hidden', String(!willOpen));
             if (backdrop) {
                 backdrop.classList.toggle('opacity-0', !willOpen);
@@ -366,6 +367,7 @@
             document.body.style.overflow = willOpen ? 'hidden' : '';
             var btn = document.getElementById('mobileMenuBtn');
             if (btn) btn.setAttribute('aria-expanded', String(willOpen));
+            if (btn) btn.classList.toggle('open', willOpen);
         }
         function closeMobileMenu() { toggleMobileMenu(false); }
         function togglePracticeSubmenu(e) {
@@ -400,6 +402,28 @@
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
         
+    </script>
+    <!-- Back to top -->
+    <button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
+    <script>
+        /* Premium header scroll state + back-to-top visibility */
+        (function () {
+            var header = document.getElementById('siteHeader');
+            var toTop = document.getElementById('toTop');
+            var ticking = false;
+            function onScroll() {
+                var y = window.scrollY || window.pageYOffset || 0;
+                if (header) header.classList.toggle('scrolled', y > 24);
+                if (toTop) toTop.classList.toggle('show', y > 600);
+                ticking = false;
+            }
+            window.addEventListener('scroll', function () {
+                if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+            }, { passive: true });
+            onScroll();
+        })();
     </script>
 </body>
 </html>
