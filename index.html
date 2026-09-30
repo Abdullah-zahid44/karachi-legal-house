@@ -1116,8 +1116,8 @@
                 <div class="bg-white dark:bg-navy-900 rounded-xl border border-navy-200 dark:border-navy-700/60 hover:border-gold-500/60 transition-all duration-300 shadow-soft hover:shadow-premium flex flex-col justify-between overflow-hidden group reveal ${visClass}" style="transition-delay: ${index * 60}ms">
                     
                     <div class="bg-navy-50 dark:bg-navy-800/80 border-b border-navy-100 dark:border-navy-700/60 px-5 py-3 flex items-center justify-between h-20 gap-4">
-                        <div class="h-12 flex-1 min-w-0 flex items-center rounded-md" ${c.logoBg ? `style="background:${c.logoBg}"` : ""}>
-                            <img src="${c.logo}" alt="${c.name} logo" loading="lazy" class="max-h-12 w-auto max-w-full object-contain ${c.darkBadge ? 'dark:bg-slate-100 dark:rounded-lg dark:px-3 dark:py-1' : ''}" />
+                        <div class="h-12 w-36 flex-shrink-0 flex items-center justify-center rounded-md" ${c.logoBg ? `style="background:${c.logoBg}"` : ""}>
+                            <img src="${c.logo}" alt="${c.name} logo" loading="lazy" class="h-12 w-full object-contain ${c.darkBadge ? 'dark:bg-slate-100 dark:rounded-lg dark:px-3 dark:py-1' : ''}" />
                         </div>
                         <span class="bg-navy-900 text-gold-400 text-[10px] font-bold font-mono px-2.5 py-1 rounded shadow border border-gold-500/25 text-center leading-snug max-w-[38%] flex-shrink-0 break-words">
                             ${c.badge}
